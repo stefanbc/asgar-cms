@@ -1,0 +1,17 @@
+/* TEAM */
+    Author: Stefan Cosma
+    Contact: stefcosma [at] gmail [dot] com
+    Twitter: @stefanbc
+    From: Sibiu, Romania
+
+/* THANKS */
+    
+    Platform: Koding
+    Twitter: @koding
+    From: San Francisco, Bay Area, CA, USA	
+
+/* SITE */
+    Last update: 2013/04/28
+    Language: English
+    Doctype: HTML5
+    IDE: Koding
