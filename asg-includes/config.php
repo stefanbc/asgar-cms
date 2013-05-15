@@ -1,6 +1,6 @@
 <?php
     // The basecamp for our website
-    define('HTTP', 'http://example.com');
+    define('HTTP', 'http://--change--');
     
     // The prefix for the main folders and for db tables
     define('FOLDER_PREFIX', 'asg-');
@@ -22,10 +22,10 @@
         define('FUNCTIONS', 'functions/');
         
     // Database server credentials
-    define('DB_SERVER','DB_SERVER');
-    define('DB_USER','DB_USER');
-    define('DB_PASS','DB_PASS');
-    define('DATABASE','DB_NAME');
+    define('DB_SERVER','--change--');
+    define('DB_USER','--change--');
+    define('DB_PASS','--change--');
+    define('DATABASE','--change--');
     
     // You should change this on each install! Call ?salt=true to generate a new AUTH_SALT
     define('AUTH_SALT','2*W1NJd~Q6$&Pj2L7(-,xi.L@CCr=ns<|=QGX|Fu1lqsj5$^pf.MH1/z><,;ooeu');
