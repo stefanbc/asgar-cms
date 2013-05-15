@@ -1,6 +1,6 @@
 <?php
     // The basecamp for our website
-    define('HTTP', 'http://stefanbc.koding.com/community');
+    define('HTTP', 'http://example.com');
     
     // The prefix for the main folders and for db tables
     define('FOLDER_PREFIX', 'asg-');
