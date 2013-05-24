@@ -12,10 +12,10 @@
     */
     define('ASSETS', FOLDER_PREFIX . 'assets/');
         define('THEMES', 'themes/');
-            define('THEME_CSS', 'css/');
-            define('THEME_IMAGES', 'images/');
-            define('THEME_JS', 'js/');
-                define('THEME_JS_MODULES', 'modules/');
+            define('THEME_CSS', THEMES . 'css/');
+            define('THEME_IMAGES', THEMES . 'images/');
+            define('THEME_JS', THEMES . 'js/');
+                define('THEME_JS_MODULES', THEME_JS . 'modules/');
         define('UPLOADS', 'uploads/');
     
     /*
