@@ -1,6 +1,6 @@
     RewriteEngine On
     
-    RewriteBase /~stefanbc/stefanbc.koding.com/website/community
+    RewriteBase /~stefanbc/stefanbc.koding.com/website/asgar
     
     <IfModule mod_expires.c>
     
@@ -39,6 +39,12 @@
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^([a-z0-9_]+)$ blog.php?page=$1 [L,QSA]
+    RewriteRule ^([a-z0-9_]+)$ index.php?page=$1 [L,QSA]
 
-    ErrorDocument 404 /404.php
+    # Rename the URL using the post title 
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule (?:.*?)\/([^/]*)$ post.php?id=$1 [L,QSA]
+
+    ErrorDocument 403 /~stefanbc/stefanbc.koding.com/website/asgar/403.html

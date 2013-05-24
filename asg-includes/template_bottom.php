@@ -1,4 +1,4 @@
-<footer> &copy; 2012 - <?=date('Y');?> Made by <a href="https://coderbits.com/stefanbc" title="Find me!" target="_blank">Stefan Cosma</a> with / for <a href="http://koding.com" target="_blank" title="Koding IDE">Koding</a> | Powered by <a href="https://github.com/stefanbc/Asgar" title="Asgar" target="_blank">Asgar</a></footer>
+<footer> &copy; 2012 - <?=date('Y');?> Copyright <a href="https://coderbits.com/stefanbc" title="Find me!" target="_blank">Stefan Cosma</a> | Powered by <a href="https://github.com/stefanbc/Asgar" title="Asgar" target="_blank">Asgar</a></footer>
 
 <?php
 if(asg_user_role() == 1 && asg_user_loggedin() == true){

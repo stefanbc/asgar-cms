@@ -110,41 +110,45 @@
         $current = basename($path);
         $link_query = asg_db_query("select p.ID, p.title, custom_link, sublevel.Count from " . PAGES . " p  left outer join (select parent, COUNT(*) as Count from " . PAGES . " group by parent) sublevel on p.ID = sublevel.parent where p.parent = " . $parent . " and status = 'published' order by sort ASC");
         echo "<ul>";
-        foreach ($link_query as $item) {
-            if ($item['Count'] > 0) {
-                echo "<li class='has-sub-menu'>";
-                if ($item['custom_link'] != NULL){
-                    echo "<a ";
-                    if( $current == str_replace(" ","_",$item['title']) ) { 
-                        echo "class='active' "; 
-                    } 
-                    echo "href='" . HTTP . '/' . str_replace(" ","_", $item['custom_link']) . "'>" . $item['title'] . "</a>";
-                } else {
-                    echo "<a ";
-                    if( $current == str_replace(" ","_",$item['title']) ) { 
-                        echo "class='active' "; 
-                    } 
-                    echo "href='" . HTTP . '/' . str_replace(" ","_", $item['title']) . "'>" . $item['title'] . "</a>"; 
-                }
-                asg_the_nav($item['ID'], $level + 1);
-                echo "</li>";
-            } elseif ($item['Count'] == 0) {
-                echo "<li>";
-                if ($item['custom_link'] != NULL){
-                    echo "<a ";
-                    if( $current == str_replace(" ","_",$item['title']) ) { 
-                        echo "class='active' "; 
-                    } 
-                    echo "href='" . HTTP . '/' . str_replace(" ","_", $item['custom_link']) . "'>" . $item['title'] . "</a>";
-                } else {
-                    echo "<a ";
-                    if( $current == str_replace(" ","_",$item['title']) ) { 
-                        echo "class='active' "; 
-                    } 
-                    echo "href='" . HTTP . '/' . str_replace(" ","_", $item['title']) . "'>" . $item['title'] . "</a>";
-                }
-                echo "</li>";
-            } else;
+        if(!empty($link_query)){
+            foreach ($link_query as $item) {
+                if ($item['Count'] > 0) {
+                    echo "<li class='has-submenu'>";
+                    if ($item['custom_link'] != NULL){
+                        echo "<a ";
+                        if( $current == str_replace(" ","_",$item['title']) ) { 
+                            echo "class='active' "; 
+                        } 
+                        echo "href='" . HTTP . '/' . str_replace(" ","_", $item['custom_link']) . "'>" . $item['title'] . "</a>";
+                    } else {
+                        echo "<a ";
+                        if( $current == str_replace(" ","_",$item['title']) ) { 
+                            echo "class='active' "; 
+                        } 
+                        echo "href='" . HTTP . '/' . str_replace(" ","_", $item['title']) . "'>" . $item['title'] . "</a>"; 
+                    }
+                    asg_the_nav($item['ID'], $level + 1);
+                    echo "</li>";
+                } elseif ($item['Count'] == 0) {
+                    echo "<li>";
+                    if ($item['custom_link'] != NULL){
+                        echo "<a ";
+                        if( $current == str_replace(" ","_",$item['title']) ) { 
+                            echo "class='active' "; 
+                        } 
+                        echo "href='" . HTTP . '/' . str_replace(" ","_", $item['custom_link']) . "'>" . $item['title'] . "</a>";
+                    } else {
+                        echo "<a ";
+                        if( $current == str_replace(" ","_",$item['title']) ) { 
+                            echo "class='active' "; 
+                        } 
+                        echo "href='" . HTTP . '/' . str_replace(" ","_", $item['title']) . "'>" . $item['title'] . "</a>";
+                    }
+                    echo "</li>";
+                } else;
+            }
+        } else {
+            echo "<li><a href=\"/\">home</a><li>";
         }
         echo "</ul>";
     }

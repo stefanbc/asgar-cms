@@ -16,6 +16,9 @@
     require(INCLUDES . TEMPLATE_TOP);
 ?>
     <div class="content_wrapper">
+        <?=asg_the_nav(0,1);?>
+        
+        <?if(asg_is_page(HOME_PAGE) || asg_is_page("asgar")) {?>
         <div class="first_wrapper">
             <div class="main_left_wrapper">
         		<div class="left_wrapper">
@@ -77,42 +80,13 @@
                     echo '</div>';
                 ?>
             </div>
-            <div class="main_right_wrapper">
-                <div class="submit_app_wrapper">
-                    <div class="request-overlay">
-                        <span class="entypo-popup icon">
-                            <span class="text">Submit an app idea!</span>
-                        </span>
-                    </div>
-                    <h1>App contest!</h1>
-                	<span class="text_justify">Did you built an awesome app with the KDFramework? Submit it and win awesome prizes from Koding!</span>
-        			<form id="app_idea_form" name="app_idea_form">
-        				<div class="spacer">
-            				<input type="text" class="input" name="app_name" id="app_name" placeholder="Name your awesome app!">
-        				</div>
-                        <div class="spacer">
-        					<input type="email" class="input" name="app_email" id="email" placeholder="Enter your email address" original-title="Disposable Email Addresses are not allowed!">
-        				</div>
-        				<div class="bottom">
-        					<button class="button" id="submit" type="submit">SUBMIT APP IDEA</button>
-        				</div>
-        			</form>
-                    <span id="beta-badge"></span>
-                </div>
-            </div>
     	</div>
-    	
-    	<div class="invite_wrapper">
-    		<h1 class="invite_back">Giveaway an Invite!</h1>
-            <div id="invites"></div>
-            <?=asg_paginate($invite_pages,'invites')?>
-    	</div>
-        
-        <div class="second_wrapper">
-            <h1>Invite Leaderboard</h1>
-            <div id="leaderboard"></div>
-            <?=asg_paginate($user_pages,'leaderboard')?>
-        </div>        
+        <?
+            } else {
+                echo '<h1>' . asg_the_title() . '</h1>';
+                echo asg_the_content();
+            }  
+        ?>
     </div>
 <?php
     // Footer
