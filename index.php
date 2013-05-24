@@ -8,4 +8,8 @@
     
     // Start platform
     require('asg-includes/asg_start.php');
+
+        
+    // Stop platform
+    require(INCLUDES . 'asg_stop.php');
 ?>

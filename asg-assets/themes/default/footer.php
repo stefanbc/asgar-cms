@@ -6,8 +6,8 @@ if(asg_user_role() == 1 && asg_user_loggedin() == true){
     echo '<script>CKEDITOR.replace("editor");</script>';
 }
 ?>
-<script src="<?=JS?>analytics.min.js"></script>
-<script src="<?=JS?>require.js"></script>
+<script src="<?=THEMES.ACTIVE_THEME.THEME_JS?>analytics.min.js"></script>
+<script src="<?=THEMES.ACTIVE_THEME.THEME_JS?>require.js"></script>
 <script type="text/javascript">
     <?php
     if(asg_user_role() == 1 && asg_user_loggedin() == true){
@@ -18,7 +18,7 @@ if(asg_user_role() == 1 && asg_user_loggedin() == true){
     <?
     } else {
     ?>
-        require(['<?=JS?>require-config.min'], function(){
+        require(['<?=THEMES.ACTIVE_THEME.THEME_JS?>require-config.min'], function(){
             require(['log','jQuery','modal','sharrre','tipsy','zclip','functions','general']);
         });
     <?

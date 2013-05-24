@@ -64,7 +64,7 @@
     }
 
     // Load the theme
-    require(dirname(__FILE__) . '/' . THEMES . ACTIVE_THEME . '/index.php');
+    require(THEMES . ACTIVE_THEME . '/index.php');
     
     // Break user records into pages
     $user_pages = ceil($user_count/PAGINATE_NUMBER);

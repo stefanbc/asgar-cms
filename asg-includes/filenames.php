@@ -14,8 +14,8 @@
     define('AJAX', 'general.php');
         
     // Template includes
-    define('TEMPLATE_TOP', 'template_top.php');
-    define('TEMPLATE_BOTTOM', 'template_bottom.php');
+    define('HEADER', 'header.php');
+    define('FOOTER', 'footer.php');
     
     // The Admin Panel
     define('ADMIN_PANEL', 'asg-admin.php');

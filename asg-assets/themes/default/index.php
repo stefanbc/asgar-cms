@@ -9,11 +9,8 @@
     *
 	*/
     
-    // Start platform
-    require('asg-includes/asg_start.php');
-    
     // Header
-    require(INCLUDES . TEMPLATE_TOP);
+    require(HEADER);
 ?>
     <div class="content_wrapper">
         <?=asg_the_nav(0,1);?>
@@ -90,8 +87,5 @@
     </div>
 <?php
     // Footer
-    require(INCLUDES . TEMPLATE_BOTTOM);
-    
-    // Stop platform
-    require(INCLUDES . 'asg_stop.php');
+    require(FOOTER);
 ?>
