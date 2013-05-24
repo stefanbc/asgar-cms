@@ -6,10 +6,10 @@
      * @package Asgar
      */
     
-    // Start platform
+    // Start Asgar
     require('asg-includes/asg_start.php');
 
         
-    // Stop platform
+    // Stop Asgar
     require(INCLUDES . 'asg_stop.php');
 ?>
