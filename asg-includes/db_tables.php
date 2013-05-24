@@ -11,7 +11,5 @@
     define('POSTS', TABLE_PREFIX . 'posts');
     
     // Invites and app ideas
-    define('INVITES', TABLE_PREFIX . 'invites');
-    define('CONTEST_ENTRIES', TABLE_PREFIX . 'contest_entries');
-    
+    define('INVITES', TABLE_PREFIX . 'invites');    
 ?>

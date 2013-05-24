@@ -1,32 +1,40 @@
 <?php
-    // The basecamp for our website
-    define('HTTP', 'http://stefanbc.koding.com/asgar');
-    
-    // The prefix for the main folders and for db tables
+
+    /*
+    * The prefix for the main folders and for db tables
+    * You shouldn't change these!
+    */
     define('FOLDER_PREFIX', 'asg-');
     define('TABLE_PREFIX', 'asg_');
     
-    // All the assets
+    /*
+    * The assets
+    */
     define('ASSETS', FOLDER_PREFIX . 'assets/');
-        define('CSS', ASSETS . 'css/');
-        define('IMAGES', ASSETS . 'images/');
-        define('JS', ASSETS . 'js/');
-            define('MODULES', JS . 'modules/');
-            define('JS_ADMIN', JS . 'admin/');
+        define('THEMES', 'themes/');
+            define('THEME_CSS', 'css/');
+            define('THEME_IMAGES', 'images/');
+            define('THEME_JS', 'js/');
+                define('THEME_JS_MODULES', 'modules/');
+        define('UPLOADS', 'uploads/');
     
-    // All the includes
+    /*
+    * The includes
+    */
     define('INCLUDES', FOLDER_PREFIX . 'includes/');
+        /*
+        * The admin includes
+        */
         define('ADMIN_INCLUDES', 'admin/');
             define('ADMIN_ACTIONS', ADMIN_INCLUDES . 'actions/');
+            define('ADMIN_ASSETS', ADMIN_INCLUDES . 'assets/');
+                define('ADMIN_ASSETS_CSS', ADMIN_ASSETS . 'css/');
+                define('ADMIN_ASSETS_IMAGES', ADMIN_ASSETS . 'images/');
+                define('ADMIN_ASSETS_JS', ADMIN_ASSETS . 'js/');
+            define('ADMIN_EDITOR', ADMIN_INCLUDES . 'editor/');
+        /*
+        * The other includes
+        */
         define('AJAX', 'ajax/');
         define('FUNCTIONS', 'functions/');
-        
-    // Database server credentials
-    define('DB_SERVER','mysql0.db.koding.com');
-    define('DB_USER','stefanbc_43f2da4');
-    define('DB_PASS','6f9c99f4346e41c6925b29e06573fd51a0f8ac13');
-    define('DATABASE','stefanbc_43f2da4');
-    
-    // You should change this on each install! Call ?salt=true to generate a new AUTH_SALT
-    define('AUTH_SALT','2*W1NJd~Q6$&Pj2L7(-,xi.L@CCr=ns<|=QGX|Fu1lqsj5$^pf.MH1/z><,;ooeu');
 ?>

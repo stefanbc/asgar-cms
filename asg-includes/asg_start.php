@@ -14,6 +14,9 @@
     // The user
     $the_user = $_SESSION['username'];
     
+    // Master settings
+    require(dirname(__FILE__) . '/settings.php');
+
     // Master configuration
     require(dirname(__FILE__) . '/config.php');
     
