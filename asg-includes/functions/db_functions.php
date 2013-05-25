@@ -1,4 +1,9 @@
 <?php
+    /**
+     * This file contains all the db functions that Asgar uses.
+     *
+     * @package Asgar
+     */
 
     // Setup the connection and choose the databse
     function asg_db_connect() {
@@ -51,11 +56,11 @@
         asg_db_disconnect($con);
     }
     
-    // Get user details
+    // Get loggedin user details
     function asg_user_info($type){
         $username = $_SESSION['username'];
         // Get the user info
-        $get_query = asg_db_query("select " . $type . " from " . USERS . " where username = '" . $username . "'");
+        $get_query = asg_db_query("select " . $type . " from " . TABLE_USERS . " where username = '" . $username . "'");
         if(!empty($get_query)) {
             foreach ($get_query as $user) {
                 return $user[$type];

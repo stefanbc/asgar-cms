@@ -1,4 +1,10 @@
-<?
+<?php
+    /**
+     * This file has all the sessions functions for Asgar.
+     *
+     * @package Asgar
+     */
+
     // Check if user is logged in
     function asg_user_loggedin(){          
         if(empty($_SESSION['username'])){

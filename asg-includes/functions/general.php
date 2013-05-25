@@ -1,6 +1,11 @@
-<?
+<?php
+    /**
+     * This file contains all the general functions for Asgar.
+     *
+     * @package Asgar
+     */
 
-    // Short the urls
+    // Short the urls using tinyurl.com
     function asg_short_url($url) {
         $ch = curl_init();  
         $timeout = 5;  
@@ -109,6 +114,7 @@
         return $random;
     }
     
+    // Check if image exists
     function asg_check_image($img) {
         
         list($width, $height, $type, $attr) = getimagesize($img);

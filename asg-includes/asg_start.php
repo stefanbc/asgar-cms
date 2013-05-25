@@ -10,15 +10,7 @@
     $time = explode(' ', $time);
     $time = $time[1] + $time[0];
     $start = $time;
-    
-    // Name the Asgar session
-    session_name('_asg_auth');
-    // Start the session
-    session_start();
-    
-    // The Asgar auth main Session variable
-    $asg_auth = $_SESSION['username'];
-    
+        
     // Master settings
     require(dirname(__FILE__) . '/settings.php');
 
@@ -42,11 +34,18 @@
     
     // Session functions
     require(dirname(__FILE__) . '/' . FUNCTIONS . FILE_SESSION);
+
+    // Name the Asgar session
+    session_name('_asg_auth');
+    // Start the session
+    asg_start_session();
+    // The Asgar auth main Session variable
+    $asg_auth = $_SESSION['username'];
         
     // Generate SALT if requested
     if($_REQUEST['salt'] == true){
         
-        echo "Replace line 26 in your config file with the one below<br><br>";
+        echo "Replace line 18 in your settings file with the one below<br><br>";
         echo "define('AUTH_SALT','" . asg_random_gen(64,true) . "');";
         die();
         
@@ -56,7 +55,7 @@
     $con = asg_db_connect();
     
     // Get the configuration options from the Database
-    $get_options_query = asg_db_query("select * from " . OPTIONS);
+    $get_options_query = asg_db_query("select * from " . TABLE_OPTIONS);
     
     // Get the options values
     foreach($get_options_query as $option){

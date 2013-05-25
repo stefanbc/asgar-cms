@@ -1,19 +1,9 @@
-<?
-    // Get user title
-    function asg_user_title($number){
-        if($number >= 0 && $number < 25) { 
-            $title = 'Community Private';
-        } elseif ($number >= 25 && $number < 50) {
-            $title = 'Community Sergeant';
-        } elseif ($number >= 50 && $number < 100) {
-            $title = 'Community Captain';
-        } elseif ($number >= 100 && $number < 200) {
-            $title = 'Community General';
-        } elseif ($number >= 200) {
-            $title = 'Community Guru';
-        }
-        return $title;
-    }
+<?php
+    /**
+     * This file contains all the output functions that Asgar uses.
+     *
+     * @package Asgar
+     */
     
     // Check redirect user if not admin
     function asg_redirect_user(){
@@ -108,7 +98,7 @@
         $path    = $_SERVER['REQUEST_URI'];
         // Remove any noise and set it as current
         $current = basename($path);
-        $link_query = asg_db_query("select p.ID, p.title, custom_link, sublevel.Count from " . PAGES . " p  left outer join (select parent, COUNT(*) as Count from " . PAGES . " group by parent) sublevel on p.ID = sublevel.parent where p.parent = " . $parent . " and status = 'published' order by sort ASC");
+        $link_query = asg_db_query("select p.ID, p.title, custom_link, sublevel.Count from " . TABLE_PAGES . " p  left outer join (select parent, COUNT(*) as Count from " . TABLE_PAGES . " group by parent) sublevel on p.ID = sublevel.parent where p.parent = " . $parent . " and status = 'published' order by sort ASC");
         echo "<ul>";
         if(!empty($link_query)){
             foreach ($link_query as $item) {
@@ -155,7 +145,7 @@
 
     // Show the title for each page
     function asg_the_title(){
-        $custom_link_query = asg_db_query("select title, custom_link from " . PAGES . " where status = 'published'");
+        $custom_link_query = asg_db_query("select title, custom_link from " . TABLE_PAGES . " where status = 'published'");
         $url = substr("http" . (($_SERVER['SERVER_PORT'] == 443) ? "s://" : "://") . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], 0, -1);
         foreach($custom_link_query as $custom_link){
             // Request the page name.
@@ -167,7 +157,7 @@
                 $page = $custom_link['title'];
             } 
         }
-        $title_query = asg_db_query("select title from " . PAGES . " where title = '" . str_replace("_"," ",$page) . "' and status = 'published' order by ID");
+        $title_query = asg_db_query("select title from " . TABLE_PAGES . " where title = '" . str_replace("_"," ",$page) . "' and status = 'published' order by ID");
         if(empty($title_query)) {
             $the_title = "404 Not Found";
         } else {
@@ -187,7 +177,7 @@
     function asg_the_content(){
         // Request the page name. Default is home
         $page = isset($_REQUEST["page"]) ? $_REQUEST["page"] : HOME_PAGE;
-        $queryPage = asg_db_query("select content from " . PAGES . " where title = '" . str_replace("_"," ",$page) . "' and status = 'published' order by ID");
+        $queryPage = asg_db_query("select content from " . TABLE_PAGES . " where title = '" . str_replace("_"," ",$page) . "' and status = 'published' order by ID");
         if(empty($queryPage)) {
             $the_content = "404 Not Found! The page is missing! We'll go look for it!";
         } else {
@@ -204,7 +194,7 @@
 
     // Check to find active posts and sisplay them on the proper page
     function asg_has_posts(){
-        $check_posts_query = asg_db_query("select * from " . POSTS . " where post_status = 'published' order by post_date desc");
+        $check_posts_query = asg_db_query("select * from " . TABLE_POSTS . " where post_status = 'published' order by post_date desc");
         foreach($check_posts_query as $post){
             $the_post = '<div id="post-' . $post['ID'] . '">';
             $the_post .= '<div class="post_title"><a href="' . BLOG_PAGE . '/' . str_replace(" ","_",strtolower($post['post_title'])) . '" title="'.$post['post_title'].'"><h2>' . $post['post_title'] . '</h2></a></div>';
@@ -229,7 +219,7 @@
     
     // Create a sidebar if the page has this set in the db
     function asg_sidebar($show_class = ''){
-        $custom_link_query = asg_db_query("select title, custom_link from " . PAGES . " where status = 'published'");
+        $custom_link_query = asg_db_query("select title, custom_link from " . TABLE_PAGES . " where status = 'published'");
         $url = substr("http" . (($_SERVER['SERVER_PORT'] == 443) ? "s://" : "://") . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], 0, -1);
         foreach($custom_link_query as $custom_link){
             // Request the page name.
@@ -241,7 +231,7 @@
                 $page = $custom_link['title'];
             } 
         }
-        $querySidebar = asg_db_query("select sidebar_status from " . PAGES . " where title = '" . str_replace("_"," ",$page) . "' and status = 'published' order by ID");
+        $querySidebar = asg_db_query("select sidebar_status from " . TABLE_PAGES . " where title = '" . str_replace("_"," ",$page) . "' and status = 'published' order by ID");
         if(empty($querySidebar)) {
         } else {
             foreach ($querySidebar as $sidebar) {
@@ -255,5 +245,21 @@
             }
         }
         return $the_sidebar;
+    }
+
+    // Custom function for getting the user title
+    function asg_user_title($number){
+        if($number >= 0 && $number < 25) { 
+            $title = 'Community Private';
+        } elseif ($number >= 25 && $number < 50) {
+            $title = 'Community Sergeant';
+        } elseif ($number >= 50 && $number < 100) {
+            $title = 'Community Captain';
+        } elseif ($number >= 100 && $number < 200) {
+            $title = 'Community General';
+        } elseif ($number >= 200) {
+            $title = 'Community Guru';
+        }
+        return $title;
     }
 ?>
