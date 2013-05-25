@@ -11,7 +11,18 @@
     <div class="content_wrapper">
         <?=asg_the_nav(0,1);?>
         
-        <? if(asg_is_page(HOME_PAGE) || asg_is_page("asgar")) { ?>
+        <? 
+            if(asg_is_page(HOME_PAGE) || asg_is_page("asgar")) { 
+
+            // Get the average waiting time for invite query
+            $average_time = asg_db_query("select (sum(unix_timestamp(invite_date) - unix_timestamp(date)) / count(*)) as average_time from " . TABLE_INVITES . " where status = '1' and date >= '2013-01-17 14:00:00' order by date asc");
+            // Count the number of people invited
+            $invites_number = asg_db_num_rows("select * from " . TABLE_INVITES . " where status = '1' order by date asc");
+            // Count the number of people in queue
+            $queue_number = asg_db_num_rows("select * from " . TABLE_INVITES . " where status = '0'");
+            // Count the number of people invited by the user
+            $user_invite_number = asg_db_num_rows("select * from " . TABLE_INVITES . " where status = '1' and invited_by = '" . $asg_auth . "' order by date asc");
+        ?>
             <div class="first_wrapper">
                 <div class="main_left_wrapper">
             		<div class="left_wrapper">
