@@ -5,6 +5,25 @@
      * @package Asgar
      */
 
+    // Measure page load time start
+    function asg_loadtime_start(){
+      $time = microtime();
+      $time = explode(' ', $time);
+      $time = $time[1] + $time[0];
+      $start = $time;
+      return $start;
+    }
+
+    // Measure page load time end
+    function asg_loadtime_end($start){
+      $time = microtime();
+      $time = explode(' ', $time);
+      $time = $time[1] + $time[0];
+      $finish = $time;
+      $total_time = round(($finish - $start), 4);
+      echo '<!-- generated in ' . $total_time . ' seconds. -->';
+    }
+
     // Short the urls using tinyurl.com
     function asg_short_url($url) {
         $ch = curl_init();  

@@ -4,12 +4,6 @@
      *
      * @package Asgar
      */
-
-    // Measure page load time
-    $time = microtime();
-    $time = explode(' ', $time);
-    $time = $time[1] + $time[0];
-    $start = $time;
         
     // Master settings
     require(dirname(__FILE__) . '/settings.php');
@@ -34,6 +28,9 @@
     
     // Session functions
     require(dirname(__FILE__) . '/' . FUNCTIONS . FILE_SESSION);
+
+    // Measure page load time
+    $loadtime = asg_loadtime_start();
 
     // Name the Asgar session
     session_name('_asg_auth');
