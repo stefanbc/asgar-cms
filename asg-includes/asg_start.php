@@ -1,17 +1,22 @@
 <?php
-    
+    /**
+     * This file loads all the stuff that Asgar needs.
+     *
+     * @package Asgar
+     */
+
     // Measure page load time
     $time = microtime();
     $time = explode(' ', $time);
     $time = $time[1] + $time[0];
     $start = $time;
     
-    // Name the session
+    // Name the Asgar session
     session_name('_asg_auth');
     // Start the session
     session_start();
     
-    // The user
+    // The Asgar auth main Session variable
     $asg_auth = $_SESSION['username'];
     
     // Master settings
@@ -24,22 +29,19 @@
     require(dirname(__FILE__) . '/filenames.php');
     
     // Database tables
-    require(dirname(__FILE__) . '/' . TABLES);
+    require(dirname(__FILE__) . '/' . FILE_TABLES);
     
     // Database functions
-    require(dirname(__FILE__) . '/' . FUNCTIONS . DB_FUNCTIONS);
+    require(dirname(__FILE__) . '/' . FUNCTIONS . FILE_DB_FUNCTIONS);
     
     // Output functions
-    require(dirname(__FILE__) . '/' . FUNCTIONS . OUTPUT);
+    require(dirname(__FILE__) . '/' . FUNCTIONS . FILE_OUTPUT);
     
     // General functions
-    require(dirname(__FILE__) . '/' . FUNCTIONS . GENERAL);
+    require(dirname(__FILE__) . '/' . FUNCTIONS . FILE_GENERAL);
     
     // Session functions
-    require(dirname(__FILE__) . '/' . FUNCTIONS . SESSION);
-    
-    // Queries
-    require(dirname(__FILE__) . '/' . QUERIES);
+    require(dirname(__FILE__) . '/' . FUNCTIONS . FILE_SESSION);
         
     // Generate SALT if requested
     if($_REQUEST['salt'] == true){
@@ -63,11 +65,6 @@
         
     }
 
-    // Load the theme
+    // Load the active theme
     require(THEMES . ACTIVE_THEME . '/index.php');
-    
-    // Break user records into pages
-    $user_pages = ceil($user_count/PAGINATE_NUMBER);
-    // Break invites record into pages
-    $invite_pages = ceil($queue_number/INVITES_PAGINATE_NUMBER);
 ?>
