@@ -1,12 +1,12 @@
-Theme Name: Twenty Twelve
+Theme Name: Asgar Default
 
-Theme URI: http://wordpress.org/extend/themes/twentytwelve
+Theme URI: http://asgar.com
 
-Author: the WordPress team
+Author: The Asgar team
 
-Author URI: http://wordpress.org/
+Author URI: http://coderbits.com/stefanbc
 
-Description: The 2012 theme for WordPress is a fully responsive theme that looks great on any device. Features include a front page template with its own widgets, an optional display font, styling for post formats on both index and single views, and an optional no-sidebar page template. Make it yours with a custom menu, header image, and background.
+Description: 
 
 Version: 1.0
 
@@ -14,4 +14,4 @@ License: GNU General Public License v2 or later
 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Text Domain: twentytwelve
+Text Domain: default
