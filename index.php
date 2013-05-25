@@ -1,7 +1,7 @@
 <?php
     /**
      * Front to the Asgar CMS Platform. This file doesn't do anything, 
-     * it only tells Asgar to load the theme.
+     * it only tells Asgar to start the platform.
      *
      * @package Asgar
      */

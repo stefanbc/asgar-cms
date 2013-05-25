@@ -1,10 +1,5 @@
 <?php
     
-    // Break user records into pages
-    $user_pages = ceil($user_count/PAGINATE_NUMBER);
-    // Break invites record into pages
-    $invite_pages = ceil($queue_number/INVITES_PAGINATE_NUMBER);
-
     // Get the average waiting time for invite query
     $average_time = asg_db_query("select (sum(unix_timestamp(invite_date) - unix_timestamp(date)) / count(*)) as average_time from " . INVITES . " where status = '1' and date >= '2013-01-17 14:00:00' order by date asc");
     
@@ -17,4 +12,8 @@
     // Count the number of people invited by the user
     $user_invite_number = asg_db_num_rows("select * from " . INVITES . " where status = '1' and invited_by = '" . $asg_auth . "' order by date asc");
     
+    // Break user records into pages
+    $user_pages = ceil($user_count/PAGINATE_NUMBER);
+    // Break invites record into pages
+    $invite_pages = ceil($queue_number/INVITES_PAGINATE_NUMBER);
 ?>
