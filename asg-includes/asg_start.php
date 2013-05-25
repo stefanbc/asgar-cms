@@ -7,12 +7,12 @@
     $start = $time;
     
     // Name the session
-    session_name('_kdcp_auth');
+    session_name('_asg_auth');
     // Start the session
     session_start();
     
     // The user
-    $the_user = $_SESSION['username'];
+    $asg_auth = $_SESSION['username'];
     
     // Master settings
     require(dirname(__FILE__) . '/settings.php');

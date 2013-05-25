@@ -10,6 +10,6 @@
     // Count the number of people in queue
     $queue_number = asg_db_num_rows("select * from " . INVITES . " where status = '0'");
     // Count the number of people invited by the user
-    $user_invite_number = asg_db_num_rows("select * from " . INVITES . " where status = '1' and invited_by = '" . $the_user . "' order by date asc");
+    $user_invite_number = asg_db_num_rows("select * from " . INVITES . " where status = '1' and invited_by = '" . $asg_auth . "' order by date asc");
     
 ?>

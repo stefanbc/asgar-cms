@@ -44,7 +44,7 @@
         			<h1>Giveaway Invites!</h1>
         			Do you want to help others experience Koding? Giveaway some of your invites!
                     <?php
-                        if(isset($the_user)){
+                        if(isset($asg_auth)){
                             echo '<span id="user-invited">You invited ' . $user_invite_number . ' people so far!</span>';
                         }
                     ?>

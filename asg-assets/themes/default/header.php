@@ -39,9 +39,9 @@ if(asg_user_role() == 1 && asg_user_loggedin() == true){
         <section>
             <nav>    
                 <?php
-                    if(isset($the_user)){
+                    if(isset($asg_auth)){
                         echo asg_get_avatar(asg_user_info('email'),20,true);
-                        echo '<span class="nav_item" id="user" data-url="http://koding.com/' . $the_user . '">' . asg_user_greeting() . $the_user . ' !</span>';
+                        echo '<span class="nav_item" id="user" data-url="http://koding.com/' . $asg_auth . '">' . asg_user_greeting() . $asg_auth . ' !</span>';
                         if(asg_user_role() == 1) {
                             echo '<span class="nav_item entypo-cog icon-spacer admin-only" id="admin" data-url="admin">admin panel</span>';
                         }
