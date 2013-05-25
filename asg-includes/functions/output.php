@@ -91,6 +91,37 @@
             return false;
         }
     }
+
+    // Load header dependencies in the theme file
+    function asg_header(){
+
+    }
+
+    // Get the theme folder for the active theme
+    function asg_themefolder($type, $path){
+        // Relative of absolute path
+        // Default false
+        switch ($path) {
+            case 'true':
+                $folder = HTTP . '/' . THEMES . ACTIVE_THEME;
+            break;
+            default:
+                $folder = THEMES . ACTIVE_THEME;
+            break;
+        }
+        switch ($type) {
+            case 'css':
+                $folder .= THEME_CSS;
+            break;
+            case 'images':
+                $folder .= THEME_IMAGES;
+            break;
+            case 'js':
+                $folder .= THEME_JS;
+            break;
+        }
+        return $folder;
+    }
     
     // Create multi-level navigation
     function asg_the_nav($parent, $level){

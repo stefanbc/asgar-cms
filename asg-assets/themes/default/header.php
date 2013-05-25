@@ -9,11 +9,11 @@
 
 <meta itemprop="name" content="<?=WEBSITE_NAME?>">
 <meta itemprop="description" content="Do you want a Koding invite? Request an invite from the community!">
-<meta itemprop="image" content="<?=HTTP.'/'.IMAGES?>profile_pic.png">
+<meta itemprop="image" content="<?=asg_themefolder('images',true)?>profile_pic.png">
 
 <meta property="og:title" content="<?=WEBSITE_NAME?>"/>
 <meta property="og:description" content="Do you want a Koding invite? Request an invite from the community!"/>
-<meta property="og:image" content="<?=HTTP.'/'.IMAGES?>profile_pic.png"/>
+<meta property="og:image" content="<?=asg_themefolder('images',true)?>profile_pic.png"/>
 
 <link href="humans.txt" rel="author">
 <link href="https://plus.google.com/106548653223239136460/posts" rel="author">
@@ -22,12 +22,12 @@
 
 <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300|Open+Sans:600|Roboto:300,400" rel="stylesheet" type="text/css">
 <link href="//weloveiconfonts.com/api/?family=entypo" rel="stylesheet" type="text/css">
-<link href="<?=THEMES.ACTIVE_THEME.THEME_CSS?>tipsy.css" rel="stylesheet" type="text/css">
-<link href="<?=THEMES.ACTIVE_THEME.THEME_CSS?>sharrre.css" rel="stylesheet" type="text/css">
-<link href="<?=THEMES.ACTIVE_THEME.THEME_CSS?>style.min.css" rel="stylesheet" type="text/css">
+<link href="<?=asg_themefolder('css',false)?>tipsy.css" rel="stylesheet" type="text/css">
+<link href="<?=asg_themefolder('css',false)?>sharrre.css" rel="stylesheet" type="text/css">
+<link href="<?=asg_themefolder('css',false)?>style.min.css" rel="stylesheet" type="text/css">
 <?php
 if(asg_user_role() == 1 && asg_user_loggedin() == true){
-    echo '<link href="'.THEMES.ACTIVE_THEME.THEME_CSS.'admin-style.css" rel="stylesheet" type="text/css">';
+    echo '<link href="'.asg_themefolder('css').'admin-style.css" rel="stylesheet" type="text/css">';
 }
 ?>
 </head>
