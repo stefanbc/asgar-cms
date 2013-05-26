@@ -26,7 +26,7 @@
 <link href="<?=asg_themefolder('css',false)?>sharrre.css" rel="stylesheet" type="text/css">
 <link href="<?=asg_themefolder('css',false)?>style.min.css" rel="stylesheet" type="text/css">
 
-<?=asg_script('header')?>
+<?=asg_scripts('header')?>
 
 </head>
 <body>

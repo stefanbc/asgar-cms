@@ -112,7 +112,8 @@
                 $output .= "<script type=\"text/javascript\">
                                 require(['" . INCLUDES . JS ."require-config.min'], function(){
                                     require(['log','jQuery','modal','tipsy','functions',general']);
-                                });" . "\n\r";
+                                });
+                            </script>" . "\n\r";
             break;
         }
         return $output;        
