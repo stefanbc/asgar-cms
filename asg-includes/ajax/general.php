@@ -1,5 +1,5 @@
 <?php
-    $load_theme = false;
+    $disallow_theme = true;
 
     require(dirname(__DIR__) . '/asg_start.php');
 
