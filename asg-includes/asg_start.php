@@ -61,11 +61,12 @@
         
     }
 
-    // Load the active theme if it's found on the server
+    // Load the active theme if it's found on the server and
+    // if allowed by the file that needs the app start
     if ($disallow_theme != true) {
 
         $theme_folder = dirname(__DIR__) . '/' . THEMES . ACTIVE_THEME;
-        
+
         if (!is_dir($theme_folder)) {
             echo "The active theme doesn't exist!";
         } else {
