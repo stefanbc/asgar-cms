@@ -1,5 +1,5 @@
 <?php
-    require('../asg_start.php');
+    require('../asg_start.php?no_theme');
     
     $action = $con->escape_string(htmlspecialchars($_POST['action'],ENT_QUOTES));
 

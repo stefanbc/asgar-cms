@@ -61,6 +61,8 @@
         
     }
 
-    // Load the active theme
-    require(THEMES . ACTIVE_THEME . '/index.php');
+    if (!$_REQUEST['no_theme']) {
+        // Load the active theme
+        require(dirname(__DIR__) . '/' . THEMES . ACTIVE_THEME . '/index.php');
+    }
 ?>

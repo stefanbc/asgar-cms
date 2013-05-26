@@ -144,7 +144,7 @@
                 $folder .= THEME_JS;
             break;
             default:
-                $folder .= '';
+                $folder .= '/';
             break;
         }
         return $folder;
