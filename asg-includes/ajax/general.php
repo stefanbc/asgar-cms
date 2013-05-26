@@ -60,7 +60,7 @@
                         $_SESSION['username'] = $username;
                         
                         // Set the cookie from here
-                        setcookie('_asg_auth', $username, time() + (86400 * 7)); // 86400 = 1 day
+                        setcookie('_asg_cookie', $username, time() + (86400 * 7)); // 86400 = 1 day
                         
                         asg_db_update("update " . TABLE_USERS . " set last_login = NOW() where username = '" . $username . "' ");
                         
@@ -77,7 +77,7 @@
                         	$_SESSION['username'] = $username;
                             
                             // Set the cookie from here
-                            setcookie('_asg_auth', $username, time() + (86400 * 7)); // 86400 = 1 day
+                            setcookie('_asg_cookie', $username, time() + (86400 * 7)); // 86400 = 1 day
                             
                             asg_db_update("update " . TABLE_USERS . " set last_login = NOW() where username = '" . $username . "' ");
                             
@@ -99,7 +99,7 @@
     
             asg_destroy_session();
             
-            setcookie('_asg_auth', '', time() - 60000);
+            setcookie('_asg_cookie', '', time() - 60000);
             
             echo 'Yes';
             

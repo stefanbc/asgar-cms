@@ -553,9 +553,17 @@ header .avatar {
 }
 .tinner {
     padding:20px; 
-    box-shadow: 0 0 30px #000;
-    background: rgba(255,255,255,1) url("../images/preload.gif") no-repeat 50% 50%; 
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    -webkit-box-shadow: 0 4px 16px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 4px 16px rgba(0,0,0,.2);
+    box-shadow: 0 4px 16px rgba(0,0,0,.2);
+    outline: 0;
+    border: 1px solid #acacac;
+    border: 1px solid rgba(0,0,0,.333);
+    background-image: url("../images/preload.gif");
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-clip: padding-box;
     text-align: center;
 }
 .tmask {
@@ -565,7 +573,7 @@ header .avatar {
     left:0; 
     height:100%; 
     width:100%; 
-    background:#000; 
+    background:#fff; 
     z-index:800
 }
 .tclose {
