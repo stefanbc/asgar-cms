@@ -47,7 +47,6 @@
     # Rewrite page url with post title 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{DOCUMENT_ROOT}$1 -f
-    RewriteRule (?:.*?)\/([^/]*)$ post.php?id=$1 [L,QSA]
+    RewriteRule (?:.*?)\/([^/]*)$ index.php?post=$1 [L,QSA]
 
     ErrorDocument 403 /~stefanbc/stefanbc.koding.com/website/asgar/403.html

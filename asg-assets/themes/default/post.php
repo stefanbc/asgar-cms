@@ -1,16 +1,14 @@
 <?php
-    /*
-    *    Title: Koding Community Platform
-	*	Author: Stefan Cosma
-	*	Date: 07.12.2012
-    *
-    *
-	*/
+    /**
+     * Main post theme file.
+     *
+     * @package default
+     */
     
-    $post_query = asg_db_query("select * from " . TABLE_POSTS . " where post_title = '" . str_replace("_"," ", $_REQUEST['id']) . "' and post_status = 'published'");
+    $post_query = asg_db_query("select * from " . TABLE_POSTS . " where post_title = '" . str_replace("_"," ", $_REQUEST['post']) . "' and post_status = 'published'");
     
     if(empty($post_query)){
-            $custom_title = '404 Article not found';
+        $custom_title = '404 Article not found';
     } else {
         foreach($post_query as $post){  
             $custom_title = $post['post_title'];
@@ -45,5 +43,5 @@
     
 <?php
     // Footer
-    require("header.php");
+    require("footer.php");
 ?>
