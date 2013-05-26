@@ -61,8 +61,15 @@
         
     }
 
+    // Load the active theme if it's found on the server
     if ($disallow_theme != true) {
-        // Load the active theme
-        require(dirname(__DIR__) . '/' . THEMES . ACTIVE_THEME . '/index.php');
+
+        $theme_folder = dirname(__DIR__) . '/' . THEMES . ACTIVE_THEME;
+        
+        if (!is_dir($theme_folder)) {
+            echo "The active theme doesn't exist!";
+        } else {
+            require($theme_folder . '/index.php');
+        }
     }
 ?>
