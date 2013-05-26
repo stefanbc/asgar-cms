@@ -25,11 +25,9 @@
 <link href="<?=asg_themefolder('css',false)?>tipsy.css" rel="stylesheet" type="text/css">
 <link href="<?=asg_themefolder('css',false)?>sharrre.css" rel="stylesheet" type="text/css">
 <link href="<?=asg_themefolder('css',false)?>style.min.css" rel="stylesheet" type="text/css">
-<?php
-if(asg_user_role() == 1 && asg_user_loggedin() == true){
-    echo '<link href="'.asg_themefolder('css').'admin-style.css" rel="stylesheet" type="text/css">';
-}
-?>
+
+<?=asg_script('header')?>
+
 </head>
 <body>
     <header>

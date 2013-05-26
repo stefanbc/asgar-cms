@@ -93,8 +93,29 @@
     }
 
     // Load header dependencies in the theme file
-    function asg_header(){
+    function asg_scripts($zone){
+        switch ($zone) {
+            case 'header':
+                if(asg_user_role() == 1 && asg_user_loggedin() == true && asg_is_page("asg-admin")){
+                    $output = '<link href="'.asg_themefolder('css',false).'admin-style.css" rel="stylesheet" type="text/css">' . "\n\r";
+                }
+            break;
+            case 'footer':
+                
+                if(asg_user_role() == 1 && asg_user_loggedin() == true && asg_is_page("asg-admin")){
+                    $output .= '<script src="' . INCLUDES . ADMIN_EDITOR . 'ckeditor.js"></script>' . "\n\r";
+                    $output .= '<script>CKEDITOR.replace("editor");</script>' . "\n\r";
+                }
 
+                $output = '<script src="' . INCLUDES . JS . 'analytics.min.js"></script>' . "\n\r";
+                $output .= '<script src="' . INCLUDES . JS . 'require.js"></script>' . "\n\r";
+                $output .= "<script type=\"text/javascript\">
+                                require(['" . INCLUDES . JS ."require-config.min'], function(){
+                                    require(['log','jQuery','modal','tipsy','functions',general']);
+                                });" . "\n\r";
+            break;
+        }
+        return $output;        
     }
 
     // Get the theme folder for the active theme

@@ -5,7 +5,7 @@
      * @package default
      */
 
-    // Header
+    // Header part
     require('header.php');
 ?>
     <div class="content_wrapper">
@@ -93,6 +93,6 @@
         ?>
     </div>
 <?php
-    // Footer
+    // Footer part
     require('footer.php');
 ?>

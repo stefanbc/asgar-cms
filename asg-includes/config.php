@@ -37,4 +37,5 @@
         */
         define('AJAX', 'ajax/');
         define('FUNCTIONS', 'functions/');
+        define('JS', 'js/');
 ?>
