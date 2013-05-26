@@ -148,6 +148,37 @@
         }
         return $folder;
     }
+
+    // Get the requested theme file
+    // default is index.php
+    function asg_get_themefile(){
+        // Get the current page
+        $path    = $_SERVER['REQUEST_URI'];
+        // Remove any noise and set it as current
+        $current = basename($path);
+        // Get current page for comparison 
+        $url = substr("http" . (($_SERVER['SERVER_PORT'] == 443) ? "s://" : "://") . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], 0, -1);
+
+        if($url == HTTP || $current == HOME_PAGE || $current == BLOG_PAGE) {
+            $file = "index.php";
+        } else {
+            $page_query = asg_db_query("select title, custom_link from " . TABLE_PAGES . " where title = '" . $current . "' and status = 'published'");
+            if (!empty($page_query)) {
+                foreach($page_query as $custom_link){
+                    // Request the page name.
+                    if($custom_link['custom_link'] != NULL) {
+                        $file = $custom_link['custom_link'] . '.php';
+                    } else {
+                        $file = "index.php";
+                    }
+                }
+            } else {
+                $file = "post.php";
+            }
+        }
+
+        return $file;
+    }
     
     // Create multi-level navigation
     function asg_the_nav($parent, $level){

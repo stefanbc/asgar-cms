@@ -1,5 +1,6 @@
     RewriteEngine On
     
+    # Dev purpose only
     RewriteBase /~stefanbc/stefanbc.koding.com/website/asgar
     
     <IfModule mod_expires.c>
@@ -33,18 +34,20 @@
       </FilesMatch>
     </IfModule>
 
+    # Redirect if file with php extension is called
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME}\.php -f
     RewriteRule ^([^/]+)$ $1.php
 
+    # Rewrite page url with page title
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^([a-z0-9_]+)$ index.php?page=$1 [L,QSA]
 
-    # Rename the URL using the post title 
-
+    # Rewrite page url with post title 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{DOCUMENT_ROOT}$1 -f
     RewriteRule (?:.*?)\/([^/]*)$ post.php?id=$1 [L,QSA]
 
     ErrorDocument 403 /~stefanbc/stefanbc.koding.com/website/asgar/403.html

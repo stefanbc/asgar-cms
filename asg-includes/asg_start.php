@@ -68,9 +68,10 @@
         $theme_folder = dirname(__DIR__) . '/' . THEMES . ACTIVE_THEME;
 
         if (!is_dir($theme_folder)) {
-            echo "The active theme doesn't exist!";
+            echo "The active theme folder doesn't exist!";
         } else {
-            require($theme_folder . '/index.php');
+            require($theme_folder . '/' . asg_get_themefile());
         }
+
     }
 ?>

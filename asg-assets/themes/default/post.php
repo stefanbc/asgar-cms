@@ -6,9 +6,6 @@
     *
     *
 	*/
-        
-    // Start platform
-    require('asg-includes/asg_start.php');
     
     $post_query = asg_db_query("select * from " . TABLE_POSTS . " where post_title = '" . str_replace("_"," ", $_REQUEST['id']) . "' and post_status = 'published'");
     
@@ -49,7 +46,4 @@
 <?php
     // Footer
     require("header.php");
-    
-    // Stop platform
-    require(INCLUDES . 'asg_stop.php');
 ?>

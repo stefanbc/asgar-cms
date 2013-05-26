@@ -5,13 +5,13 @@
      * @package default
      */
 
+    $custom_title = "Giveaway an Invite";
+
     // Header
     require("header.php");
 ?>
     <div class="content_wrapper">
         <?=asg_the_nav(0,1);?>
-
-        <? $custom_title = "Giveaway an Invite" ?>
                 
         <h1><?=asg_the_title()?></h1>
         
