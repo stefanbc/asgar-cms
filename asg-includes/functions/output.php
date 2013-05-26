@@ -103,7 +103,6 @@
                 }
             break;
             case 'footer':
-                
                 if(asg_user_role() == 1 && asg_user_loggedin() == true && asg_is_page("asg-admin")){
                     $output .= '<script src="' . INCLUDES . ADMIN_EDITOR . 'ckeditor.js"></script>' . "\n\r";
                     $output .= '<script>CKEDITOR.replace("editor");</script>' . "\n\r";
@@ -111,11 +110,11 @@
 
                 $output = '<script src="' . INCLUDES . JS . 'analytics.min.js"></script>' . "\n\r";
                 $output .= '<script src="' . INCLUDES . JS . 'require.js"></script>' . "\n\r";
-                $output .= "<script type=\"text/javascript\">
-                                require(['" . INCLUDES . JS ."require-config.min'], function(){
-                                    require(['log','jQuery','modal','tipsy','functions','general']);
-                                });
-                            </script>" . "\n\r";
+                $output .= "<script type=\"text/javascript\">" . "\n\r";
+                    $output .= "require(['" . INCLUDES . JS ."require-config.min'], function(){" . "\n\r";
+                        $output .= "\t" . "require(['log','jQuery','modal','tipsy','functions','general']);" . "\n\r";
+                    $output .= "});" . "\n\r";
+                $output .= "</script>" . "\n\r";
             break;
         }
         return $output;        

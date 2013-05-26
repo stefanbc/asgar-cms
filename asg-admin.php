@@ -6,12 +6,19 @@
     *
     *
 	*/
-        
+    
+    $disallow_theme = true;
+
     // Start platform
     require('asg-includes/asg_start.php');
     
     // Check if user is admin
     asg_redirect_user();
+
+    $the_title = "Asgar Admin Panel";
+
+    // Header part
+    require(asg_themefolder('',false) . 'header.php');
 ?>
     <div class="content_wrapper">
         <h1 class="entypo-cloud-thunder icon-spacer">Asgar Admin Panel</h1>
@@ -63,7 +70,10 @@
         
     </div>
     
-<?php    
+<?php
+    // Footer part
+    require(asg_themefolder('',false) . 'footer.php');
+
     // Stop platform
     require(INCLUDES . 'asg_stop.php');
 ?>
