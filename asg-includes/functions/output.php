@@ -92,12 +92,12 @@
         }
     }
 
-    // Load header dependencies in the theme file
+    // Load dependencies in each zone in the theme file
     function asg_scripts($zone){
         switch ($zone) {
             case 'header':
                 if(asg_user_role() == 1 && asg_user_loggedin() == true && asg_is_page("asg-admin")){
-                    $output = '<link href="'.asg_themefolder('css',false).'admin-style.css" rel="stylesheet" type="text/css">' . "\n\r";
+                    $output = '<link href="' . INCLUDES . ADMIN_ASSETS_CSS . 'admin-style.css" rel="stylesheet" type="text/css">' . "\n\r";
                 }
             break;
             case 'footer':
