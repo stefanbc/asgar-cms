@@ -22,7 +22,6 @@
 
 <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300|Open+Sans:600|Roboto:300,400" rel="stylesheet" type="text/css">
 <link href="//weloveiconfonts.com/api/?family=entypo" rel="stylesheet" type="text/css">
-<link href="<?=asg_themefolder('css',false)?>tipsy.css" rel="stylesheet" type="text/css">
 <link href="<?=asg_themefolder('css',false)?>sharrre.css" rel="stylesheet" type="text/css">
 <link href="<?=asg_themefolder('css',false)?>style.min.css" rel="stylesheet" type="text/css">
 

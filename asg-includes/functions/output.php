@@ -96,8 +96,10 @@
     function asg_scripts($zone){
         switch ($zone) {
             case 'header':
+                $output = '<link href="' . INCLUDES . CSS . 'tipsy.css" rel="stylesheet" type="text/css">' . "\n\r";
+
                 if(asg_user_role() == 1 && asg_user_loggedin() == true && asg_is_page("asg-admin")){
-                    $output = '<link href="' . INCLUDES . ADMIN_ASSETS_CSS . 'admin-style.css" rel="stylesheet" type="text/css">' . "\n\r";
+                    $output .= '<link href="' . INCLUDES . ADMIN_ASSETS_CSS . 'admin-style.css" rel="stylesheet" type="text/css">' . "\n\r";
                 }
             break;
             case 'footer':
