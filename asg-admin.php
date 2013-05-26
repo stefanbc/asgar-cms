@@ -15,7 +15,7 @@
     // Check if user is admin
     asg_redirect_user();
 
-    $the_title = "Asgar Admin Panel";
+    $custom_title = "Asgar Admin Panel";
 
     // Header part
     require(asg_themefolder('',false) . 'header.php');

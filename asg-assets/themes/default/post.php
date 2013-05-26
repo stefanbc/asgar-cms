@@ -10,18 +10,18 @@
     // Start platform
     require('asg-includes/asg_start.php');
     
-    $post_query = asg_db_query("select * from " . POSTS . " where post_title = '" . str_replace("_"," ", $_REQUEST['id']) . "' and post_status = 'published'");
+    $post_query = asg_db_query("select * from " . TABLE_POSTS . " where post_title = '" . str_replace("_"," ", $_REQUEST['id']) . "' and post_status = 'published'");
     
     if(empty($post_query)){
-            $the_title = '404 Article not found';
+            $custom_title = '404 Article not found';
     } else {
         foreach($post_query as $post){  
-            $the_title = $post['post_title'];
+            $custom_title = $post['post_title'];
         }
     }
     
     // Header
-    require(INCLUDES . TEMPLATE_TOP);
+    require("header.php");
 ?>
     <div class="content_wrapper">
         <?php 
@@ -48,7 +48,7 @@
     
 <?php
     // Footer
-    require(INCLUDES . TEMPLATE_BOTTOM);
+    require("header.php");
     
     // Stop platform
     require(INCLUDES . 'asg_stop.php');

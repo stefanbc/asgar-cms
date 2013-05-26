@@ -222,8 +222,8 @@
                 $the_title = ucfirst($title['title']);
             }
         }
-        if(isset($GLOBALS["the_title"])){
-            $the_title = $GLOBALS["the_title"];
+        if(isset($GLOBALS["custom_title"])){
+            $the_title = $GLOBALS["custom_title"];
             return $the_title;
         } else {
             return $the_title;
