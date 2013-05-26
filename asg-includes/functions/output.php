@@ -111,7 +111,7 @@
                 $output .= '<script src="' . INCLUDES . JS . 'require.js"></script>' . "\n\r";
                 $output .= "<script type=\"text/javascript\">
                                 require(['" . INCLUDES . JS ."require-config.min'], function(){
-                                    require(['log','jQuery','modal','tipsy','functions','general', 'custom']);
+                                    require(['log','jQuery','modal','tipsy','functions','general']);
                                 });
                             </script>" . "\n\r";
             break;
@@ -140,6 +140,9 @@
             break;
             case 'js':
                 $folder .= THEME_JS;
+            break;
+            default:
+                $folder .= '';
             break;
         }
         return $folder;
