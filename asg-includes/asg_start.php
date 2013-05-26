@@ -61,8 +61,8 @@
         
     }
 
+    // Load the active theme if it's not called by an ajax script
     if ($load_theme != false) {
-        // Load the active theme
         require(dirname(__DIR__) . '/' . THEMES . ACTIVE_THEME . '/index.php');
     }
 ?>
