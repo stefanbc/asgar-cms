@@ -12,16 +12,13 @@
     
     // Check if user is admin
     asg_redirect_user();
-    
-    // Header
-    require(INCLUDES . TEMPLATE_TOP);
 ?>
     <div class="content_wrapper">
         <h1 class="entypo-cloud-thunder icon-spacer">Asgar Admin Panel</h1>
         
         <!-- ADMIN NAVIGATION -->
         <div class="admin-nav-wrapper">
-            <?php require(INCLUDES . ADMIN_INCLUDES . ADMIN_NAVIGATION); ?>
+            <?php require(INCLUDES . ADMIN_INCLUDES . FILE_ADMIN_NAVIGATION); ?>
         </div>
         
         <!-- ADMIN CONTENT -->
@@ -31,34 +28,34 @@
                 
                 switch($page):
                     case 'list_posts':
-                        include(INCLUDES . ADMIN_ACTIONS . ADMIN_ACTION_LIST_POSTS);
+                        include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_LIST_POSTS);
                     break;
                     case 'new_post':
-                        include(INCLUDES . ADMIN_ACTIONS . ADMIN_ACTION_NEW_POST);
+                        include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_NEW_POST);
                     break;
                     case 'categories':
-                        include(INCLUDES . ADMIN_ACTIONS . ADMIN_ACTION_CATEGORIES);
+                        include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_CATEGORIES);
                     break;
                     case 'tags':
-                        include(INCLUDES . ADMIN_ACTIONS . ADMIN_ACTION_TAGS);
+                        include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_TAGS);
                     break;
                     case 'list_pages':
-                        include(INCLUDES . ADMIN_ACTIONS . ADMIN_ACTION_LIST_PAGES);
+                        include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_LIST_PAGES);
                     break;
                     case 'new_page':
-                        include(INCLUDES . ADMIN_ACTIONS . ADMIN_ACTION_NEW_PAGE);
+                        include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_NEW_PAGE);
                     break;
                     case 'list_users':
-                        include(INCLUDES . ADMIN_ACTIONS . ADMIN_ACTION_LIST_USERS);
+                        include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_LIST_USERS);
                     break;
                     case 'new_user':
-                        include(INCLUDES . ADMIN_ACTIONS . ADMIN_ACTION_NEW_USER);
+                        include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_NEW_USER);
                     break;
                     case 'settings':
-                        include(INCLUDES . ADMIN_ACTIONS . ADMIN_ACTION_SETTINGS);
+                        include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_SETTINGS);
                     break;
                     default:
-                        include(INCLUDES . ADMIN_ACTIONS . ADMIN_ACTION_DASHBOARD);
+                        include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_DASHBOARD);
                     break;
                 endswitch;
             ?>
@@ -66,10 +63,7 @@
         
     </div>
     
-<?php
-    // Footer
-    require(INCLUDES . TEMPLATE_BOTTOM);
-    
+<?php    
     // Stop platform
     require(INCLUDES . 'asg_stop.php');
 ?>
