@@ -1,6 +1,8 @@
 <?php
-    require('../asg_start.php?no_theme');
-    
+    $load_theme = false;
+
+    require(dirname(__DIR__) . '/asg_start.php');
+
     $action = $con->escape_string(htmlspecialchars($_POST['action'],ENT_QUOTES));
 
     switch($action):

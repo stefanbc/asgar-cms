@@ -40,7 +40,7 @@
     $asg_auth = $_SESSION['username'];
         
     // Generate SALT if requested
-    if($_REQUEST['salt'] == true){
+    if($_REQUEST['salt']){
         
         echo "Replace line 18 in your settings file with the one below<br><br>";
         echo "define('AUTH_SALT','" . asg_random_gen(64,true) . "');";
@@ -61,7 +61,7 @@
         
     }
 
-    if (!$_REQUEST['no_theme']) {
+    if ($load_theme != false) {
         // Load the active theme
         require(dirname(__DIR__) . '/' . THEMES . ACTIVE_THEME . '/index.php');
     }
