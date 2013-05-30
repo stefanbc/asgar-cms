@@ -1,4 +1,0 @@
-Asgar
-=====
-
-Asgar CMS Platform
