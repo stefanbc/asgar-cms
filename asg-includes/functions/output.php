@@ -96,16 +96,17 @@
     function asg_scripts($zone){
         switch ($zone) {
             case 'header':
-                $output = '<link href="' . INCLUDES . CSS . 'tipsy.css" rel="stylesheet" type="text/css">' . "\n\r";
+                $output = '<link href="//weloveiconfonts.com/api/?family=entypo" rel="stylesheet" type="text/css">' . "\n\r";
+                $output .= '<link href="' . INCLUDES . CSS . 'tipsy.css" rel="stylesheet" type="text/css">' . "\n\r";
 
-                if(asg_user_role() == 1 && asg_user_loggedin() == true && asg_is_page("asg-admin")){
+                if(asg_user_role() == 1 && asg_user_loggedin() == true && (asg_is_page("asg-admin?page=" . $_REQUEST['page']) || asg_is_page("asg-admin"))){
                     $output .= '<link href="' . INCLUDES . ADMIN_ASSETS_CSS . 'admin-style.css" rel="stylesheet" type="text/css">' . "\n\r";
                 }
             break;
             case 'footer':
-                if(asg_user_role() == 1 && asg_user_loggedin() == true && asg_is_page("asg-admin")){
-                    $output .= '<script src="' . INCLUDES . ADMIN_EDITOR . 'ckeditor.js"></script>' . "\n\r";
-                    $output .= '<script>CKEDITOR.replace("editor");</script>' . "\n\r";
+                if(asg_user_role() == 1 && asg_user_loggedin() == true && asg_is_page("asg-admin?page=" . $_REQUEST['page'])){
+                    $output = '<script src="' . INCLUDES . ADMIN_EDITOR . 'ckeditor.js"></script>' . "\n\r";
+                    $output .= '<script type="text/javascript">CKEDITOR.replace("editor");</script>' . "\n\r";
                 }
 
                 $output = '<script src="' . INCLUDES . JS . 'analytics.min.js"></script>' . "\n\r";
@@ -119,67 +120,7 @@
         }
         return $output;        
     }
-
-    // Get the theme folder for the active theme
-    function asg_themefolder($type, $path){
-        // Relative of absolute path
-        // Default false
-        switch ($path) {
-            case 'true':
-                $folder = HTTP . '/' . THEMES . ACTIVE_THEME;
-            break;
-            default:
-                $folder = THEMES . ACTIVE_THEME;
-            break;
-        }
-        switch ($type) {
-            case 'css':
-                $folder .= THEME_CSS;
-            break;
-            case 'images':
-                $folder .= THEME_IMAGES;
-            break;
-            case 'js':
-                $folder .= THEME_JS;
-            break;
-            default:
-                $folder .= '/';
-            break;
-        }
-        return $folder;
-    }
-
-    // Get the requested theme file
-    // default is index.php
-    function asg_get_themefile(){
-        // Get the current page
-        $path    = $_SERVER['REQUEST_URI'];
-        // Remove any noise and set it as current
-        $current = basename($path);
-        // Get current page for comparison 
-        $url = substr("http" . (($_SERVER['SERVER_PORT'] == 443) ? "s://" : "://") . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], 0, -1);
-
-        if($url == HTTP || $current == HOME_PAGE || $current == BLOG_PAGE) {
-            $file = "index.php";
-        } else {
-            $page_query = asg_db_query("select title, custom_link from " . TABLE_PAGES . " where title = '" . $current . "' and status = 'published'");
-            if (!empty($page_query)) {
-                foreach($page_query as $custom_link){
-                    // Request the page name.
-                    if($custom_link['custom_link'] != NULL) {
-                        $file = $custom_link['custom_link'] . '.php';
-                    } else {
-                        $file = "index.php";
-                    }
-                }
-            } else {
-                $file = "post.php";
-            }
-        }
-
-        return $file;
-    }
-    
+        
     // Create multi-level navigation
     function asg_the_nav($parent, $level){
         // Get the current page

@@ -58,6 +58,9 @@
                     case 'new_user':
                         include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_NEW_USER);
                     break;
+                    case 'apperence':
+                        include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_APPERENCE);
+                    break;
                     case 'settings':
                         include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_SETTINGS);
                     break;

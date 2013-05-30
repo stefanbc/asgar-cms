@@ -44,6 +44,7 @@
         </label>
     </div>
 </div>
+
 <div class="spacer2">
     <button class="button" id="save" type="submit">SAVE SETTINGS</button>
 </div>

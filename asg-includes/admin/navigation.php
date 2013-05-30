@@ -22,5 +22,6 @@
             <li class="admin-nav-subitem entypo-list-add icon-spacer" data-url="new_user">Add New</li>
         </ul>
     </li>
+    <li class="admin-nav-item entypo-palette icon-spacer" data-url="apperence">Apperence<li>
     <li class="admin-nav-item entypo-tools icon-spacer" data-url="settings">Settings</li>
 </ul>

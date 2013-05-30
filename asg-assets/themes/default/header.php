@@ -10,22 +10,19 @@
 <meta itemprop="name" content="<?=WEBSITE_NAME?>">
 <meta itemprop="description" content="Do you want a Koding invite? Request an invite from the community!">
 <meta itemprop="image" content="<?=asg_themefolder('images',true)?>profile_pic.png">
-
 <meta property="og:title" content="<?=WEBSITE_NAME?>"/>
 <meta property="og:description" content="Do you want a Koding invite? Request an invite from the community!"/>
 <meta property="og:image" content="<?=asg_themefolder('images',true)?>profile_pic.png"/>
 
 <link href="humans.txt" rel="author">
 <link href="https://plus.google.com/106548653223239136460/posts" rel="author">
-
 <!--<link href="http://koding.com/images/favicon.ico" rel="shortcut icon">-->
 
+<?=asg_scripts('header')?>
+
 <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300|Open+Sans:600|Roboto:300,400" rel="stylesheet" type="text/css">
-<link href="//weloveiconfonts.com/api/?family=entypo" rel="stylesheet" type="text/css">
 <link href="<?=asg_themefolder('css',false)?>sharrre.css" rel="stylesheet" type="text/css">
 <link href="<?=asg_themefolder('css',false)?>style.min.css" rel="stylesheet" type="text/css">
-
-<?=asg_scripts('header')?>
 
 </head>
 <body>

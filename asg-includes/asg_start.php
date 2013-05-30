@@ -28,6 +28,9 @@
     
     // Session functions
     require(dirname(__FILE__) . '/' . FUNCTIONS . FILE_SESSION);
+    
+    // Themes functions
+    require(dirname(__FILE__) . '/' . FUNCTIONS . FILE_THEMES_FUNCTIONS);
 
     // Measure page load time
     $loadtime = asg_loadtime_start();

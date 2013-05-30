@@ -10,6 +10,7 @@
 ?>
     <div class="content_wrapper">
         <?=asg_the_nav(0,1);?>
+        <input type="text" class="input tooltip" name="search" id="search" placeholder="Search" original-title="Type something to search!">
         
         <? 
             if(asg_is_page(HOME_PAGE) || asg_is_page("asgar")) { 
