@@ -1,0 +1,5 @@
+# Ignore sftp-config file
+sftp-config.json
+
+# Ignore settings file
+asg-includes/settings.php
