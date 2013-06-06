@@ -15,6 +15,16 @@ $(document).ready(function(){
     // Top Navigation
     $('.nav_item[data-url]').click(function(){ href(this); });
 
+    // Top Navigation
+    $('.admin-nav-item[data-url]').click(function(){ 
+        admin_href(this);
+    });
+    
+    $('.admin-nav-subitem[data-url]').click(function(e){
+        e.stopPropagation();
+        admin_href(this);
+    });
+
     // Click on account action
     $('#account').click(function(){
         TINY.box.show({
