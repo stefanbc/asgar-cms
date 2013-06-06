@@ -1,6 +1,6 @@
 <h1>Pages</h1>
 <?
-    $query_pages = asg_db_query("select * from " . PAGES);
+    $query_pages = asg_db_query("select * from " . TABLE_PAGES);
     
     if (!empty($query_pages)) {
         foreach($query_pages as $page) {
