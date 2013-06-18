@@ -97,6 +97,8 @@
         switch ($zone) {
             case 'header':
                 $output = '<link href="//weloveiconfonts.com/api/?family=entypo" rel="stylesheet" type="text/css">' . "\n\r";
+                $output .= '<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300|Open+Sans:600|Roboto:300,400" rel="stylesheet" type="text/css">';
+                $output .= '<link href="' . INCLUDES . CSS . 'asg_style.css" rel="stylesheet" type="text/css">' . "\n\r";
                 $output .= '<link href="' . INCLUDES . CSS . 'tipsy.css" rel="stylesheet" type="text/css">' . "\n\r";
 
                 if(asg_user_role() == 1 && asg_user_loggedin() == true && (asg_is_page("asg-admin?page=" . $_REQUEST['page']) || asg_is_page("asg-admin"))){
@@ -120,7 +122,34 @@
         }
         return $output;        
     }
-        
+    
+    // The admin bar at the top
+    function asg_admin_bar($user){
+        $output  = '<header>' . "\n\r";
+            $output .= '<div class="logo" data-url="' . HTTP . '">' . "\n\r";
+                $output .= '<span class="tagline">' . WEBSITE_NAME . '</span>'. "\n\r";
+            $output .= '</div>' . "\n\r";
+            $output .= '<section>' . "\n\r";
+            $output .= '<nav>' . "\n\r";
+                if(isset($user)){
+                    $output .= asg_get_avatar(asg_user_info('email'),20,true) . "\n\r";
+                    $output .= '<span class="nav_item" id="user" data-url="http://koding.com/' . $user . '">' . asg_user_greeting() . $user . ' !</span>' . "\n\r";
+                    if(asg_user_role() == 1) {
+                        $output .= '<span class="nav_item entypo-cog icon-spacer admin-only" id="admin" data-url="admin">admin panel</span>' . "\n\r";
+                    }
+                    $output .= '<span class="nav_item entypo-user icon-spacer" id="account">account</span>' . "\n\r";
+                    $output .= '<span class="nav_item entypo-trophy icon-spacer tooltip" id="badges" original-title="Coming soon!">badges</span>' . "\n\r";
+                    $output .= '<span class="nav_item entypo-logout icon-spacer" id="logout">logout</span>' . "\n\r";
+                } else {
+                    $output .= '<span class="nav_item entypo-login icon-spacer" id="login">login / create account</span>' . "\n\r";
+                }
+            $output .= '</nav>' . "\n\r";
+            $output .= '</section>' . "\n\r";
+        $output .= '</header>' . "\n\r";
+
+        return $output;
+    }
+
     // Create multi-level navigation
     function asg_the_nav($parent, $level){
         // Get the current page
@@ -128,7 +157,7 @@
         // Remove any noise and set it as current
         $current = basename($path);
         $link_query = asg_db_query("select p.ID, p.title, custom_link, sublevel.Count from " . TABLE_PAGES . " p  left outer join (select parent, COUNT(*) as Count from " . TABLE_PAGES . " group by parent) sublevel on p.ID = sublevel.parent where p.parent = " . $parent . " and status = 'published' order by sort ASC");
-        echo "<ul>";
+        echo "<ul class='main_nav'>";
         if(!empty($link_query)){
             foreach ($link_query as $item) {
                 if ($item['Count'] > 0) {
@@ -170,6 +199,16 @@
             echo "<li><a href=\"/\">home</a><li>";
         }
         echo "</ul>";
+    }
+
+    // The search function
+    function asg_search(){
+        $output  = '<form method="post" action="search" name="search">' . "\n\r";
+            $output .= '<input type="text" class="input tooltip" name="s" id="s" placeholder="Search" original-title="Type something to search!">' . "\n\r";
+            $output .= '<button class="button" id="search_button" type="submit">SEARCH</button>' . "\n\r";
+        $output .= '</form>' . "\n\r";
+
+        return $output;
     }
 
     // Show the title for each page

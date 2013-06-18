@@ -1,16 +1,9 @@
+/**
+ * The main css file for the default theme
+ *
+ * @package Asgar
+ */
 @charset "UTF-8";
-
-/*
-*	Title   : Request a Koding invite
-*	Author  : Stefan Cosma
-*	Date    : 07.12.2012
-*   File    : style.css 
-*/
-
-/* entypo font */
-[class*="entypo-"]:before {
-    font-family: 'entypo', sans-serif;
-}
 
 html,
 body {
@@ -58,20 +51,6 @@ a, .link {
 a:hover, .link:hover, a:focus, .link:focus { color: #D61C1C; }
 
 h1, h2 { font-weight: 300; }
-
-header {
-    overflow: hidden;
-    padding: 20px;
-    background: rgba(0,0,0,1);
-    box-shadow: 0 0 5px 5px #000;
-}
-
-header section {
-    overflow: hidden;
-    float: right;
-    text-align: right;
-    margin-top: 6px;
-}
 
 button.button {
     border: 1px solid rgba(0,0,0,0.72);
@@ -194,52 +173,6 @@ input.input:-moz-placeholder { color:#666; }
 
 input[type="checkbox"] {
     display: inline-block;
-}
-
-.logo {
-    /*background-image: url("../images/_sprite.png");
-    background-position: 0 -3px;
-    background-repeat: no-repeat;
-    background-size: 120px;
-    width: 305px;*/
-    height: 30px;
-    display: block;
-    position: relative;
-    float: left;
-    cursor: pointer;
-}
-
-.tagline {
-    overflow: hidden;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2em;
-    font-weight: 300;
-    float: right;
-    margin-top: 3px;
-    color: rgba(214, 28, 28, 1);
-    text-shadow: 0 5px 5px #000;
-}
-
-.nav_item { 
-    cursor: pointer; 
-    font-size: 0.9em;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    color: #fff;
-    text-shadow: #000 2px 2px 3px;
-    margin: 0 5px;
-    padding: 0 5px;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.nav_item:hover, .nav_item:focus { color: #fcb738; }
-
-.icon-spacer:before {
-    padding: 5px;
-    color: #fff;
 }
 
 #user-invited {
@@ -520,17 +453,6 @@ ul#leaderboard_items li span:first-child{
     border-radius: 4px;
 }
 
-header .avatar {
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.7);
-    padding: 1px;
-    vertical-align: top;
-    height: 20px;
-    width: 20px;
-}
-
 .pagination { 
     overflow:hidden; 
     padding: 0; 
@@ -544,49 +466,6 @@ header .avatar {
 }
 .pagination li .active { color:#fcb738; text-decoration: underline; }
 .paginate_item { font-size: 1.1em; text-decoration: none; }
-
-.tbox {
-    position:absolute; 
-    display:none; 
-    padding:14px 17px; 
-    z-index:900;
-}
-.tinner {
-    padding:20px; 
-    -webkit-box-shadow: 0 4px 16px rgba(0,0,0,.2);
-    -moz-box-shadow: 0 4px 16px rgba(0,0,0,.2);
-    box-shadow: 0 4px 16px rgba(0,0,0,.2);
-    outline: 0;
-    border: 1px solid #acacac;
-    border: 1px solid rgba(0,0,0,.333);
-    background-image: url("../images/preload.gif");
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-clip: padding-box;
-    text-align: center;
-}
-.tmask {
-    position:absolute; 
-    display:none; 
-    top:0; 
-    left:0; 
-    height:100%; 
-    width:100%; 
-    background:#fff; 
-    z-index:800
-}
-.tclose {
-    position:absolute; 
-    top: 18px;
-    right: 24px;
-    width: 16px;
-    height: 16px;
-    cursor:pointer; 
-    background-image: url("../images/_sprite.png");
-    background-position: -10px -224px;
-    background-repeat: no-repeat;
-}
 
 .the_email {
     unicode-bidi: bidi-override; 
@@ -619,22 +498,4 @@ footer {
     width: 100%;
     color: #fff;
     text-shadow: 0 5px 5px #000;
-}
-
-.box_inner { text-align: justify; font-size: 0.9em; }
-.box_inner h2 { margin: 5px 0; }
-
-/*
-*   Media Queries
-*
-*/
-
-@media (max-width: 767px) {
-    .left_wrapper, .right_wrapper { float: none; }
-    .first_wrapper { width: 300px; height: 770px; }
-    #average_time { margin: 0 25px 20px 25px; }
-    .invite_wrapper { width: 300px; height: auto; }
-    .invite_back { width: auto; text-align: center; }
-    ul#items li { float: none; margin: 0 auto 10px auto; }
-    footer { width: 300px; }
 }
