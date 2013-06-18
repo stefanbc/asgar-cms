@@ -203,12 +203,10 @@
 
     // The search function
     function asg_search(){
-        $output  .= '<div class="search_wrapper">' . "\n\r";
-            $output  .= '<form method="get" action="search" name="search">' . "\n\r";
-                $output .= '<input type="text" class="input tooltip" name="s" id="s" placeholder="Search" original-title="Type something to search!">' . "\n\r";
-                $output .= '<button class="button" id="search_button" type="submit">SEARCH</button>' . "\n\r";
-            $output .= '</form>' . "\n\r";
-        $output .= '</div>';
+        $output  = '<form method="get" action="search" name="search">' . "\n\r";
+            $output .= '<input type="text" class="input tooltip" name="s" id="s" placeholder="Search" original-title="Search for something!">' . "\n\r";
+            $output .= '<button class="button" id="search_button" type="submit">SEARCH</button>' . "\n\r";
+        $output .= '</form>' . "\n\r";
 
         return $output;
     }
@@ -287,36 +285,6 @@
         return $excerpt;
     }
     
-    // Create a sidebar if the page has this set in the db
-    function asg_sidebar($show_class = ''){
-        $custom_link_query = asg_db_query("select title, custom_link from " . TABLE_PAGES . " where status = 'published'");
-        $url = substr("http" . (($_SERVER['SERVER_PORT'] == 443) ? "s://" : "://") . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], 0, -1);
-        foreach($custom_link_query as $custom_link){
-            // Request the page name.
-            if(isset($_REQUEST["page"])) {
-                $page = $_REQUEST["page"];
-            } elseif($url == HTTP) {
-                $page = HOME_PAGE;
-            } elseif($custom_link['custom_link'] != NULL) {
-                $page = $custom_link['title'];
-            } 
-        }
-        $querySidebar = asg_db_query("select sidebar_status from " . TABLE_PAGES . " where title = '" . str_replace("_"," ",$page) . "' and status = 'published' order by ID");
-        if(empty($querySidebar)) {
-        } else {
-            foreach ($querySidebar as $sidebar) {
-                if($sidebar['sidebar_status'] == 1) {
-                    if($show_class == true) {
-                        $the_sidebar = 'has_sidebar';
-                    } else {
-                        $the_sidebar = '<div class="sidebar"><h1>Sidebar</h1></div>';
-                    }
-                }
-            }
-        }
-        return $the_sidebar;
-    }
-
     // Custom function for getting the user title
     function asg_user_title($number){
         if($number >= 0 && $number < 25) { 

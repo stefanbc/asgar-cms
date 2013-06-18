@@ -17,22 +17,19 @@ body {
 .the_email::selection{background: rgba(39,39,39,0)}
 
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 5px;
 }
 ::-webkit-scrollbar-track {
-    background-color: #272727;
-    background-image: url("../images/dark_matter.png");
-    background-repeat: repeat;
+    /*background-color: #272727;*/
+    /*background-image: url("../images/dark_matter.png");*/
+    /*background-repeat: repeat;*/
 }
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 185, 41,.5); 
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
 }
 
 body {
-    /*background-color: #272727;
-    background-image: url("../images/dark_matter.png");
-    background-repeat: repeat;*/
-    text-shadow: #e6e6e6 2px 2px 3px;
     color: #000;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 300;
@@ -493,9 +490,7 @@ footer {
     font-weight: 300;
     padding: 20px 0;
     margin: 0 auto;
-    background: rgba(0,0,0,1);
     bottom: 0;
     width: 100%;
-    color: #fff;
-    text-shadow: 0 5px 5px #000;
+    color: #000;
 }

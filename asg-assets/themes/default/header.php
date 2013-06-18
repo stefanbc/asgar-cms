@@ -18,7 +18,7 @@
 <link href="https://plus.google.com/106548653223239136460/posts" rel="author">
 <!--<link href="http://koding.com/images/favicon.ico" rel="shortcut icon">-->
 
-<!-- Loads the Asgar header scripts -->
+<!-- Asgar header scripts -->
 <?=asg_scripts('header')?>
 
 <link href="<?=asg_themefolder('css',false)?>sharrre.css" rel="stylesheet" type="text/css">
@@ -27,17 +27,23 @@
 </head>
 <body>
 
-<!-- Loads the Asgar admin bar -->
+<!-- Asgar admin bar -->
 <?=asg_admin_bar($asg_auth)?>
 
-<div class="navigation">
-<!-- The main navigation -->
-<?=asg_the_nav(0,1);?>
-</div>
+<!-- page wrapper -->
+<div class="page-wrapper">
+	<!-- sidebar -->
+	<aside class="sidebar-wrapper">
+		<!-- main navigation -->
+		<div class="navigation">
+			<?=asg_the_nav(0,1)?>
+		</div>
 
-<!-- The search form -->
-<?=asg_search();?>
+		<!-- search form -->
+		<div class="search-wrapper">
+			<?=asg_search()?>
+		</div>
+	</aside>
 
-<!-- Begin content -->
-<div class="content_wrapper">
-	
+	<!-- begin content -->
+	<div class="content-wrapper">
