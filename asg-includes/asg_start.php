@@ -71,7 +71,7 @@
         $theme_folder = dirname(__DIR__) . '/' . THEMES . ACTIVE_THEME;
 
         if (!is_dir($theme_folder)) {
-            echo "The active theme folder doesn't exist!";
+            echo "The active theme folder doesn't exist! Please install a theme!";
         } else {
             require($theme_folder . '/' . asg_get_themefile());
         }

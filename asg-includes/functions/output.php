@@ -157,7 +157,7 @@
         // Remove any noise and set it as current
         $current = basename($path);
         $link_query = asg_db_query("select p.ID, p.title, custom_link, sublevel.Count from " . TABLE_PAGES . " p  left outer join (select parent, COUNT(*) as Count from " . TABLE_PAGES . " group by parent) sublevel on p.ID = sublevel.parent where p.parent = " . $parent . " and status = 'published' order by sort ASC");
-        echo "<ul class='main_nav'>";
+        echo "<ul class='main-navigation'>";
         if(!empty($link_query)){
             foreach ($link_query as $item) {
                 if ($item['Count'] > 0) {

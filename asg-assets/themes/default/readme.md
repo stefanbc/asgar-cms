@@ -2,7 +2,7 @@ Theme Name: Asgar Default
 
 Theme URI: http://asgar.com
 
-Author: The Asgar team
+Author: The Asgar Team
 
 Author URI: http://coderbits.com/stefanbc
 
