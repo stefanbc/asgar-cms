@@ -203,10 +203,12 @@
 
     // The search function
     function asg_search(){
-        $output  = '<form method="post" action="search" name="search">' . "\n\r";
-            $output .= '<input type="text" class="input tooltip" name="s" id="s" placeholder="Search" original-title="Type something to search!">' . "\n\r";
-            $output .= '<button class="button" id="search_button" type="submit">SEARCH</button>' . "\n\r";
-        $output .= '</form>' . "\n\r";
+        $output  .= '<div class="search_wrapper">' . "\n\r";
+            $output  .= '<form method="get" action="search" name="search">' . "\n\r";
+                $output .= '<input type="text" class="input tooltip" name="s" id="s" placeholder="Search" original-title="Type something to search!">' . "\n\r";
+                $output .= '<button class="button" id="search_button" type="submit">SEARCH</button>' . "\n\r";
+            $output .= '</form>' . "\n\r";
+        $output .= '</div>';
 
         return $output;
     }

@@ -59,6 +59,8 @@
 
         if($url == HTTP || $current == HOME_PAGE || $current == BLOG_PAGE || $current == 'index') {
             $file = "index.php";
+        } elseif ($current == 'search' || isset($_REQUEST['s'])) {
+            $file = "search.php";
         } else {
             $page_query = asg_db_query("select title, custom_link from " . TABLE_PAGES . " where title = '" . $current . "' and status = 'published'");
             if (!empty($page_query)) {
@@ -74,6 +76,7 @@
                 $file = "post.php";
             }
         }
+
         return $file;
     }
     
