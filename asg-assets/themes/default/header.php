@@ -35,7 +35,7 @@
 	<!-- sidebar -->
 	<aside class="sidebar-wrapper">
 		<!-- main navigation -->
-		<div class="navigation">
+		<div class="navigation-wrapper">
 			<?=asg_the_nav(0,1)?>
 		</div>
 

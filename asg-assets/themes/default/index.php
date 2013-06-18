@@ -76,7 +76,7 @@
 <?
     } else {
         // Load the page title
-        echo '<h1>' . asg_the_title() . '</h1>';
+        echo '<h1 class="page-title">' . asg_the_title() . '</h1>';
         // Load the page content
         echo asg_the_content();
     }  

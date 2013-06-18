@@ -44,7 +44,7 @@ a, .link {
 
 a:hover, a:focus { color: #0080FF; }
 
-h1, h2 { font-weight: 300; margin-top: 0; }
+h1, h2 { font-weight: 300; }
 
 input {
     font: 99% "Open Sans";
@@ -192,20 +192,37 @@ aside.sidebar-wrapper {
     overflow: hidden;
     display: block;
     width: 640px;
+    text-align: justify;
 }
+
+ul.main-navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 15px 0;
+}
+
+ul.main-navigation li {
+    text-align: right;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+ul.main-navigation li a {
+    text-decoration: none;
+}
+
+ul.main-navigation li a.active {
+    color: #0080FF;
+}
+
+h1.page-title, h1.post-title, .post-title h2 { margin-top: 0; }
+
 
 #user-invited {
     display: block;
     margin-top: 20px;
 }
 
-.content_wrapper {
-    width: 85%;
-    min-height: 700px;
-    display: block;
-    overflow: hidden;
-    margin: 0 auto;
-}
 
 .first_wrapper, .second_wrapper, .invite_wrapper {
     overflow:hidden;
