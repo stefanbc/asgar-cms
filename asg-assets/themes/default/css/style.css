@@ -209,11 +209,11 @@ ul.main-navigation li {
 
 ul.main-navigation li a {
     text-decoration: none;
+    font-weight: 400;
+    font-size: 0.8em;
 }
 
-ul.main-navigation li a.active {
-    color: #0080FF;
-}
+ul.main-navigation li a.active { color: #0080FF; }
 
 h1.page-title, h1.post-title, .post-title h2 { margin-top: 0; }
 
