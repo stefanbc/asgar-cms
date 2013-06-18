@@ -205,7 +205,7 @@
     function asg_search(){
         $output  = '<form method="get" action="search" name="search">' . "\n\r";
             $output .= '<input type="text" class="input tooltip" name="s" id="s" placeholder="search" original-title="Search for something!">' . "\n\r";
-            $output .= '<button class="button" id="search_button" type="submit">SEARCH</button>' . "\n\r";
+            $output .= '<button class="entypo-search" id="search_button" type="submit"></button>' . "\n\r";
         $output .= '</form>' . "\n\r";
 
         return $output;
@@ -233,7 +233,7 @@
                 $the_title = ucfirst($title['title']);
             }
         }
-        
+
         if(isset($GLOBALS["custom_title"])){
             $the_title = $GLOBALS["custom_title"];
             return $the_title;

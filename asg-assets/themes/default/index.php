@@ -27,7 +27,7 @@
 			Do you want a Koding invite? Request an invite from the community!
 			<form id="request_invite_form" name="request_invite_form">
 				<div class="spacer">
-					<input type="email" class="input tooltip" name="email" id="email" placeholder="Enter your email address" original-title="Disposable Email Addresses are not allowed!">
+					<input type="email" class="input tooltip" name="email" id="email" placeholder="enter your email address" original-title="Disposable Email Addresses are not allowed!">
 				</div>
 				<div class="bottom">
 					<button class="button" id="request" type="submit">REQUEST</button>
@@ -40,7 +40,7 @@
 			Do you want to help others experience Koding? Giveaway some of your invites!
             <?php
                 if(isset($asg_auth)){
-                    echo '<span id="user_invited">You invited ' . $user_invite_number . ' people so far!</span>';
+                    echo '<span id="user_invited">You have invited ' . $user_invite_number . ' people so far!</span>';
                 }
             ?>
 			<div class="bottom">
