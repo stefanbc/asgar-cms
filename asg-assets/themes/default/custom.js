@@ -1,72 +1,72 @@
-//Global variables
-var FILE = 'asg-assets/themes/default/custom-ajax.php';
-var WIDTH = 300;
-
-// Show modal, get user email and create button to copy it.
-function get(id) {
-	TINY.box.show({
-		url		: FILE,
-		post	: 'action=get&id=' + id,
-		openjs	: function(){
-			// Get the email
-			var the_email = $('.the_email').text();
-			// Reverse it
-			var rev_text = the_email.split("").reverse().join("");
-			// Copy it to clipboard
-			$('button#copy-button').zclip({
-				path:'asg-assets/themes/default/js/ZeroClipboard.swf',
-				copy: rev_text,
-				afterCopy:function(){
-					remove(id);
-					TINY.box.hide();
-				}
-			});
-		},
-		width	: WIDTH,
-		height	: 120,
-		opacity	: 60,
-		topsplit: 3
-	});
-}
-
-// Remove the request on click
-function remove(id) {
-	// Remove invite request using Ajax
-	$.post(FILE, {
-		action	: 'remove',
-		id		: id,
-		rand    : Math.random()
-	}, function (data) {
-		// If request is succesfull
-		if (data == 'Yes') {
-			// Remove the actual request
-			$('#request_' + id).fadeOut(400, function(){
-				$(this).empty().remove();
-			});
-		}
-	});
-}
-
-// Remove the request on click
-function delete_request(id) {
-	// Remove invite request using Ajax
-	$.post(FILE, {
-		action	: 'delete',
-		id		: id,
-		rand    : Math.random()
-	}, function (data) {
-		// If request is succesfull
-		if (data == 'Yes') {
-			// Remove the actual request
-			$('#request_' + id).fadeOut(400, function(){
-				$(this).empty().remove();
-			});
-		}
-	});
-}
-
 require(['require-config.min'], function() {
     require(['jQuery','log','modal','tipsy'], function ($) {
+        //Global variables
+        var FILE = 'asg-assets/themes/default/custom-ajax.php';
+        var WIDTH = 300;
+
+        // Show modal, get user email and create button to copy it.
+        function get(id) {
+        	TINY.box.show({
+        		url		: FILE,
+        		post	: 'action=get&id=' + id,
+        		openjs	: function(){
+        			// Get the email
+        			var the_email = $('.the_email').text();
+        			// Reverse it
+        			var rev_text = the_email.split("").reverse().join("");
+        			// Copy it to clipboard
+        			$('button#copy-button').zclip({
+        				path:'asg-assets/themes/default/js/ZeroClipboard.swf',
+        				copy: rev_text,
+        				afterCopy:function(){
+        					remove(id);
+        					TINY.box.hide();
+        				}
+        			});
+        		},
+        		width	: WIDTH,
+        		height	: 120,
+        		opacity	: 60,
+        		topsplit: 3
+        	});
+        }
+
+        // Remove the request on click
+        function remove(id) {
+        	// Remove invite request using Ajax
+        	$.post(FILE, {
+        		action	: 'remove',
+        		id		: id,
+        		rand    : Math.random()
+        	}, function (data) {
+        		// If request is succesfull
+        		if (data == 'Yes') {
+        			// Remove the actual request
+        			$('#request_' + id).fadeOut(400, function(){
+        				$(this).empty().remove();
+        			});
+        		}
+        	});
+        }
+
+        // Remove the request on click
+        function delete_request(id) {
+        	// Remove invite request using Ajax
+        	$.post(FILE, {
+        		action	: 'delete',
+        		id		: id,
+        		rand    : Math.random()
+        	}, function (data) {
+        		// If request is succesfull
+        		if (data == 'Yes') {
+        			// Remove the actual request
+        			$('#request_' + id).fadeOut(400, function(){
+        				$(this).empty().remove();
+        			});
+        		}
+        	});
+        }
+        
     	// Request an Invite
         $("#request_invite_form").submit(function () {
             $.post(FILE, {
