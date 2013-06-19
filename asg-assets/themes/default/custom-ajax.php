@@ -1,5 +1,8 @@
 <?php
-    require(dirname(__DIR__) . '/asg_start.php');
+    $disallow_theme = true;
+
+    $parse_uri = explode('asg-assets', $_SERVER['SCRIPT_FILENAME']);
+    require($parse_uri[0] . '/asg-includes/asg_start.php');
     
     $action = $con->escape_string(htmlspecialchars($_POST['action'],ENT_QUOTES));
 

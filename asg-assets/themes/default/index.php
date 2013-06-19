@@ -43,7 +43,7 @@
                     }
                 ?>
     			<div class="bottom">
-    				<button class="button" id="giveaway">giveaway</button>
+    				<button class="button anchor" id="giveaway" data-url="giveaway">giveaway</button>
     			</div>
     		</div>
             <!-- Stats section -->

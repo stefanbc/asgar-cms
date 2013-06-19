@@ -13,10 +13,16 @@ $(document).ready(function() {
         href(this);
     });
 
+    // Dynamic link
+    $('.anchor[data-url]').click(function() {
+        href(this);
+    });
+
     // Header Navigation
     $('.nav_item[data-url]').click(function() {
         href(this);
     });
+
     // Admin Panel Navigation
     $('.admin-nav-item[data-url]').click(function() {
         admin_href(this);

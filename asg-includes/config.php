@@ -38,4 +38,5 @@
         define('FUNCTIONS', 'functions/');
         define('JS', 'js/');
         define('CSS', 'css/');
+        define('IMAGES', 'images/');
 ?>

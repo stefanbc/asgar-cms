@@ -39,7 +39,7 @@
 
     // Get users gravatar using his email adress
     function asg_get_avatar($email, $s = 50, $img = true, $atts = '') {
-        $d = urlencode(HTTP.'/'.IMAGES . 'default_small.png');
+        $d = urlencode(HTTP.'/'.INCLUDES . IMAGES . 'default_small.png');
         $url = 'http://www.gravatar.com/avatar/';
         $url .= md5( strtolower( trim( $email ) ) );
         $url .= "?s=$s&d=$d";
@@ -110,12 +110,7 @@
                     //$output .= '<script type="text/javascript">CKEDITOR.replace("editor");</script>' . "\n\r";
                 }
                 $output .= '<script src="' . INCLUDES . JS . 'analytics.min.js"></script>' . "\n\r";
-                $output .= '<script src="' . INCLUDES . JS . 'require.js"></script>' . "\n\r";
-                $output .= "<script type=\"text/javascript\">" . "\n\r";
-                    $output .= "require(['" . INCLUDES . JS ."require-config.min'], function(){" . "\n\r";
-                        $output .= "\t" . "require(['log','jQuery','modal','tipsy','functions','general']);" . "\n\r";
-                    $output .= "});" . "\n\r";
-                $output .= "</script>" . "\n\r";
+                $output .= '<script src="' . INCLUDES . JS . 'require.js" data-main="' . INCLUDES . JS . 'require-config.min"></script>' . "\n\r";
             break;
         }
         return $output;        
