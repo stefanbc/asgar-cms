@@ -48,7 +48,7 @@
         }
         asg_db_disconnect($con);
     }
-
+    
     // Update stuff in the database
     function asg_db_update($sql){
         $con = asg_db_connect();

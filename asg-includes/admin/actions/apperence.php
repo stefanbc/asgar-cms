@@ -1,5 +1,4 @@
 <h1>Apperence</h1>
-
 <div class="spacer2 block_wrapper">
     <div class="settings_title left">Theme</div>
     <div class="settings_value left">

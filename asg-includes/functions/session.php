@@ -4,7 +4,6 @@
      *
      * @package Asgar
      */
-
     // Check if user is logged in
     function asg_user_loggedin(){          
         if(empty($_SESSION['username'])){

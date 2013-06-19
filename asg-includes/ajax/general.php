@@ -4,7 +4,7 @@
     require(dirname(__DIR__) . '/asg_start.php');
 
     $action = $con->escape_string(htmlspecialchars($_POST['action'],ENT_QUOTES));
-
+    
     switch($action):
                 
         case 'login-create':
@@ -188,7 +188,7 @@
                     echo '<div class="spacer2"><input type="checkbox" name="account-notification" value="' . $notification . '" id="account-notification" ' . $checked . '> Invite Request Email Notification</div>';
                     echo '<div class="spacer2 button_center">Current Session: ' . asg_user_info('last_login') . '</div>';
                     echo '<div class="spacer2 button_center">';
-                        echo '<button class="button tooltip" id="delete" type="submit" original-title="This action is irreversible!">DELETE ACCOUNT</button>';
+                        echo '<button class="button important tooltip" id="delete" type="submit" original-title="This action is irreversible!">DELETE ACCOUNT</button>';
                         echo '<i class="small">This will only delete your Koding Community Platform account, not your real Koding account!</i>';
                     echo '</div>';
                 echo '</form>'; 
@@ -208,7 +208,6 @@
             }
             
             $update_query = asg_db_update("update " . TABLE_USERS . " set " . $type . " = '" . $data . "' where username = '" . $_SESSION['username'] . "'");
-
             if (empty($update_query)) {
                 echo 'Yes';
             } else {

@@ -23,7 +23,7 @@
       $total_time = round(($finish - $start), 4);
       echo '<!-- generated in ' . $total_time . ' seconds. -->';
     }
-
+    
     // Short the urls using tinyurl.com
     function asg_short_url($url) {
         $ch = curl_init();  
@@ -145,5 +145,4 @@
         }
         
     }
-
 ?>

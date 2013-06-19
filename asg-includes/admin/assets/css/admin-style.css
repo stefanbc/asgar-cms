@@ -1,12 +1,10 @@
 @charset "UTF-8";
-
 /*
 *   Title   : Request a Koding invite
 *	Author  : Stefan Cosma
 *	Date    : 01.05.2013
 *   File    : admin-style.css 
 */
-
 .admin-nav-wrapper {
     float: left;
 }
@@ -85,7 +83,6 @@
     border-radius: 0 0 8px 8px;
     background: rgba(255,255,255,0.5);
 }
-
 .subtitle {
     margin-bottom: 0;
     border-bottom: 1px solid #ddd;
@@ -99,7 +96,6 @@
     width: 175px;
     padding: 7px 0;
 }
-
 .settings_value {
     width: 250px;
 }

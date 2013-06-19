@@ -7,7 +7,6 @@
      *
      * @package Asgar
      */
-
     // Options
     define('TABLE_OPTIONS', TABLE_PREFIX . 'options');
     

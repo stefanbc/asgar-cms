@@ -7,7 +7,6 @@
     
     // Database
     define('FILE_TABLES', 'db_tables.php');
-
     // Functions
     define('FILE_DB_FUNCTIONS', 'db_functions.php');
     define('FILE_GENERAL', 'general.php');

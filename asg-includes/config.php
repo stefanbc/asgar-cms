@@ -1,5 +1,4 @@
 <?php
-
     /*
     * The prefix for the main folders and for db tables
     * You shouldn't change these!
