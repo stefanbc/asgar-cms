@@ -10,7 +10,7 @@
     // Header
     require("header.php");
 ?>
-    <h1>Search</h1>
+    <h1 class="page-title">Search</h1>
 <?php 
     
     $search_keyword = $_REQUEST['s'];

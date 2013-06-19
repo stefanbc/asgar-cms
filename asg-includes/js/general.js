@@ -86,7 +86,7 @@ $(document).ready(function() {
     // Login button
     $('#login').click(function() {
         TINY.box.show({
-            html: '<div class="box_inner"><h2>Login / Create an account</h2>You can login and create an account in the same place!' + '<form id="login_form" name="login_form">' + '<div class="spacer2"><input type="text" class="input" name="username" id="username" placeholder="Your Koding username"></div>' + '<div class="spacer2"><input type="password" class="input tooltip" name="password" id="password" placeholder="Your password" original-title="Please use a different password than the one used on Koding!"></div>' + '<div class="spacer2 button_center_2">' + '<button class="button left" id="submit" type="submit">GO</button>' + '<button class="button right width-20 entypo-key tooltip" id="forgot_pass" original-title="I forgot my password!"></button>' + '</div>' + '</form>' + '</div>',
+            html: '<div class="box_inner"><h2>Login / Create an account</h2>You can login and create an account in the same place!' + '<form id="login_form" name="login_form">' + '<div class="spacer2"><input type="text" class="input" name="username" id="username" placeholder="Your Koding username"></div>' + '<div class="spacer2"><input type="password" class="input tooltip" name="password" id="password" placeholder="Your password" original-title="Please use a different password than the one used on Koding!"></div>' + '<div class="spacer2 button_center_2">' + '<button class="button left" id="submit" type="submit">GO</button>' + '<button class="button left secondary entypo-key tooltip" id="forgot_pass" original-title="I forgot my password!"></button>' + '</div>' + '</form>' + '</div>',
             width: WIDTH,
             height: 220,
             opacity: 60,
@@ -120,7 +120,7 @@ $(document).ready(function() {
                 // Forgot password
                 $("#forgot_pass").click(function() {
                     TINY.box.show({
-                        html: '<div class="box_inner"><h2>Forgot password?</h2>Enter your email address and we\'ll reset your password in just a few seconds!' + '<form id="forgot_form" name="forgot_form">' + '<div class="spacer2"><input type="email" class="input" name="forgot_email" id="forgot_email" placeholder="Your email"></div>' + '<div class="spacer2 button_center">' + '<button class="button" id="submit" type="submit">RESET</button>' + '</div>' + '</form>' + '</div>',
+                        html: '<div class="box_inner"><h2>Forgot password?</h2>Enter your email address and we\'ll reset your password in just a few seconds!' + '<form id="forgot_form" name="forgot_form">' + '<div class="spacer2"><input type="email" class="input" name="forgot_email" id="forgot_email" placeholder="Your email"></div>' + '<div class="spacer2 button_center">' + '<button class="button" id="submit" type="submit">reset password</button>' + '</div>' + '</form>' + '</div>',
                         width: WIDTH,
                         height: 180,
                         opacity: 60,
