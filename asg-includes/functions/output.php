@@ -208,7 +208,7 @@
     }
 
     // Show the title for each page
-    function asg_the_title(){
+    function asg_the_title($tags = false){
         // Get the page name from the URL
         $url = substr("http" . (($_SERVER['SERVER_PORT'] == 443) ? "s://" : "://") . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], 0, -1);
         
@@ -231,7 +231,11 @@
             $the_title = "404 Not Found";
         } else {
             foreach ($title_query as $title) {
-                $the_title = ucfirst($title['title']);
+                if ($tags) {
+                    $the_title = '<h1 class="page-title">' . ucfirst($title['title']) . '</h1>';
+                } else {
+                    $the_title = ucfirst($title['title']);
+                }
             }
         }
         if(isset($GLOBALS["custom_title"])){
@@ -267,9 +271,9 @@
         foreach($check_posts_query as $post){
             $output_post = '<article class="post-wrapper">';
                 $output_post .= '<div id="post-' . $post['ID'] . '">';
-                    $output_post .= '<div class="post_title"><a href="' . BLOG_PAGE . '/' . str_replace(" ","_",strtolower($post['post_title'])) . '" title="'.$post['post_title'].'"><h2>' . $post['post_title'] . '</h2></a></div>';
-                    $output_post .= '<div class="post_meta"><i>Published at ' . date("h:i a / F j, Y", strtotime($post['post_date'])) . '</i></div>';
-                    $output_post .= '<div class="post_excerpt">' . asg_post_excerpt($post['post_content'], EXCERPT_LENGHT, BLOG_PAGE . '/' . str_replace(" ","_",strtolower($post['post_title'])), 'more') . '</div>';
+                    $output_post .= '<div class="post-title"><a href="' . BLOG_PAGE . '/' . str_replace(" ","_",strtolower($post['post_title'])) . '" title="'.$post['post_title'].'"><h2>' . $post['post_title'] . '</h2></a></div>';
+                    $output_post .= '<div class="post-excerpt">' . asg_post_excerpt($post['post_content'], EXCERPT_LENGHT, BLOG_PAGE . '/' . str_replace(" ","_",strtolower($post['post_title'])), 'more') . '</div>';
+                    $output_post .= '<div class="post-meta"><i>Published at ' . date("h:i a / F j, Y", strtotime($post['post_date'])) . '</i></div>';
                 $output_post .= '</div>';
             $output_post .= '</article>';
             echo $output_post;

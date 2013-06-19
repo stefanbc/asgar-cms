@@ -288,6 +288,9 @@ h1.page-title, h1.post-title, .post-title h2 { margin-top: 0; }
     font-size: 12px;
     padding-left: 5px;
 }
+article.post-wrapper { margin-bottom: 20px; }
+.post-title { overflow: hidden; }
+.post-meta { margin-top: 10px; text-align: right; font-size: 0.8em; }
 ul#items, ul#leaderboard_items { 
     list-style-type: none;
     margin: 0;

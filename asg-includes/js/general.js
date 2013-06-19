@@ -34,7 +34,7 @@ $(document).ready(function() {
             url: FILE,
             post: 'action=user-details',
             width: WIDTH,
-            height: 430,
+            height: 410,
             opacity: 60,
             openjs: function() {
                 // Tooltips

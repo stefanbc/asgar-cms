@@ -189,7 +189,7 @@
                     echo '<div class="spacer2 button_center">Current Session: ' . asg_user_info('last_login') . '</div>';
                     echo '<div class="spacer2 button_center">';
                         echo '<button class="button important tooltip" id="delete" type="submit" original-title="This action is irreversible!">DELETE ACCOUNT</button>';
-                        echo '<i class="small">This will only delete your Koding Community Platform account, not your real Koding account!</i>';
+                        echo '<i class="small">This will delete your Community Platform account!</i>';
                     echo '</div>';
                 echo '</form>'; 
             echo '</div>';

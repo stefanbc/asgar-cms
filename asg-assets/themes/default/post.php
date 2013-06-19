@@ -28,8 +28,8 @@
                 $output_post = '<article class="post-wrapper">';
                     $output_post .= '<div id="post-' . $post['ID'] . '">';
                         $output_post .= '<div class="post-title"><h2>' . $post['post_title'] . '</h2></div>';
-                        $output_post .= '<div class="post-meta"><i>Published on ' . date("h:i a / F j, Y", strtotime($post['post_date'])) . '</i></div>';
                         $output_post .= '<div class="post-content">' . $post['post_content'] . '</div>';
+                        $output_post .= '<div class="post-meta"><i>Published on ' . date("h:i a / F j, Y", strtotime($post['post_date'])) . '</i></div>';
                     $output_post .= '</div>';
                 $output_post .= '</article>';
                 

@@ -76,7 +76,7 @@
     } else {
 ?>        
         <!-- the page title -->
-        <h1 class="page-title"><?=asg_the_title()?></h1>
+        <?=asg_the_title(true)?>
         <!-- the page content -->
         <section class="page-content"><?=asg_the_content()?></section>
 <?php
