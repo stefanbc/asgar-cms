@@ -218,7 +218,7 @@
 					    <div class="bottom">';
                         
                     if(isset($_SESSION['username'])) {
-                        echo '<button class="button" id="invite" onclick="get(' . $item['id'] . ')">INVITE</button>';
+                        echo '<button class="button" id="invite" onclick="get_email(' . $item['id'] . ')">INVITE</button>';
                     } else {
                         echo '<i>You need to be logged in to invite!</i>';    
                     }

@@ -5,7 +5,7 @@ require(['require-config.min'], function() {
         var WIDTH = 300;
 
         // Show modal, get user email and create button to copy it.
-        function get(id) {
+        function get_email(id) {
         	TINY.box.show({
         		url		: FILE,
         		post	: 'action=get&id=' + id,
@@ -66,7 +66,7 @@ require(['require-config.min'], function() {
         		}
         	});
         }
-        
+
     	// Request an Invite
         $("#request_invite_form").submit(function () {
             $.post(FILE, {
