@@ -22,6 +22,12 @@
     
     // Admin includes
     define('FILE_ADMIN_NAVIGATION', 'navigation.php');
+
+    // Admin includes header
+    define('FILE_ADMIN_HEADER', 'header.php');
+
+    // Admin includes footer
+    define('FILE_ADMIN_FOOTER', 'footer.php');
     
     // Admin includes categories
     define('FILE_ADMIN_ACTION_CATEGORIES', 'categories.php');

@@ -27,10 +27,10 @@
         define('ADMIN_INCLUDES', 'admin/');
             define('ADMIN_ACTIONS', ADMIN_INCLUDES . 'actions/');
             define('ADMIN_ASSETS', ADMIN_INCLUDES . 'assets/');
+                define('ADMIN_ASSETS_AJAX', ADMIN_ASSETS . 'ajax/');
                 define('ADMIN_ASSETS_CSS', ADMIN_ASSETS . 'css/');
-                define('ADMIN_ASSETS_IMAGES', ADMIN_ASSETS . 'images/');
                 define('ADMIN_ASSETS_JS', ADMIN_ASSETS . 'js/');
-            define('ADMIN_EDITOR', ADMIN_INCLUDES . 'editor/');
+                
         /*
         * The other includes
         */

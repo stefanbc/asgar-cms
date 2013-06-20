@@ -1,22 +1,22 @@
 <?php
     /*
-	*	Title: Koding Community Platform
-	*	Author: Stefan Cosma
-	*	Date: 07.12.2012
     *
     *
 	*/
     
     $disallow_theme = true;
+
     // Start platform
     require('asg-includes/asg_start.php');
     
     // Check if user is admin
     asg_redirect_user();
+
     // Set a custom title for the page
     $custom_title = "Asgar Admin Panel";
+
     // Header part
-    require(asg_themefolder('',false) . 'header.php');
+    require(INCLUDES . ADMIN_INCLUDES . FILE_ADMIN_HEADER);
 ?>
     <h1 class="entypo-cloud-thunder icon-spacer">Asgar Admin Panel</h1>
     
@@ -69,7 +69,8 @@
     </div>    
 <?php
     // Footer part
-    require(asg_themefolder('',false) . 'footer.php');
+    require(INCLUDES . ADMIN_INCLUDES . FILE_ADMIN_FOOTER);
+
     // Stop platform
     require(INCLUDES . 'asg_stop.php');
 ?>

@@ -18,6 +18,7 @@
         }
         
     }
+
     // Get the theme folder
     function asg_themefolder($type, $path){
         // Relative of absolute path
@@ -46,6 +47,7 @@
         }
         return $folder;
     }
+
     // Get the requested theme file
     // default is index.php
     function asg_get_themefile(){
@@ -81,41 +83,46 @@
     // for the active theme
     function asg_get_themeinfo($type){
         $filename = asg_themefolder('',false) . 'readme.md';
-        // Open the file
-        $fp = @fopen($filename, 'r'); 
-        // Add each line to an array
-        if ($fp) {
-           $array = explode("\n", preg_replace('/^[ \t]*[\r\n]+/m', '', fread($fp, filesize($filename))));
-        }
-        
-        switch($type){
-            case 'name';
-                $theme_info = trim(substr($array[0],11));
-            break;
-            case 'uri';
-                $theme_info = trim(substr($array[1],10));
-            break;
-            case 'author';
-                $theme_info = trim(substr($array[2],7));
-            break;
-            case 'author_uri';
-                $theme_info = trim(substr($array[3],11));
-            break;
-            case 'description';
-                $theme_info = trim(substr($array[4],12));
-            break;
-            case 'version';
-                $theme_info = trim(substr($array[5],8));
-            break;
-            case 'license';
-                $theme_info = trim(substr($array[6],8));
-            break;
-            case 'license_uri';
-                $theme_info = trim(substr($array[7],13));
-            break;
-            case 'slug';
-                $theme_info = trim(substr($array[8],5));
-            break;
+
+        if (file_exists($filename)) {
+            // Open the file
+            $fp = @fopen($filename, 'r'); 
+            // Add each line to an array
+            if ($fp) {
+               $array = explode("\n", preg_replace('/^[ \t]*[\r\n]+/m', '', fread($fp, filesize($filename))));
+            }
+            
+            switch($type){
+                case 'name';
+                    $theme_info = trim(substr($array[0],11));
+                break;
+                case 'uri';
+                    $theme_info = trim(substr($array[1],10));
+                break;
+                case 'author';
+                    $theme_info = trim(substr($array[2],7));
+                break;
+                case 'author_uri';
+                    $theme_info = trim(substr($array[3],11));
+                break;
+                case 'description';
+                    $theme_info = trim(substr($array[4],12));
+                break;
+                case 'version';
+                    $theme_info = trim(substr($array[5],8));
+                break;
+                case 'license';
+                    $theme_info = trim(substr($array[6],8));
+                break;
+                case 'license_uri';
+                    $theme_info = trim(substr($array[7],13));
+                break;
+                case 'slug';
+                    $theme_info = trim(substr($array[8],5));
+                break;
+            }
+        } else {
+            $theme_info = 'NULL';
         }
         
         return $theme_info;
