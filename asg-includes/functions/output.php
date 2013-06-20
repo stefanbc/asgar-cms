@@ -110,7 +110,7 @@
                     //$output .= '<script type="text/javascript">CKEDITOR.replace("editor");</script>' . "\n\r";
                 }
                 $output .= '<script src="' . INCLUDES . JS . 'analytics.min.js"></script>' . "\n\r";
-                $output .= '<script src="' . INCLUDES . JS . 'require.js" data-main="' . INCLUDES . JS . 'require-config.min"></script>' . "\n\r";
+                $output .= '<script src="' . INCLUDES . JS . 'require.js"></script>' . "\n\r";
             break;
         }
         return $output;        

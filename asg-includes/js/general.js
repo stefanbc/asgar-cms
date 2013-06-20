@@ -1,6 +1,7 @@
 //Global variables
 var FILE = 'asg-includes/ajax/general.php';
 var WIDTH = 300;
+
 $(document).ready(function() {
 
     // Log Header
@@ -164,6 +165,7 @@ $(document).ready(function() {
     // General tooltips
     tooltip('n');
 });
+
 // Analytics
 analytics.initialize({
     'Google Analytics': 'UA-23832918-8',

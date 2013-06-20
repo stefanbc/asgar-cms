@@ -18,5 +18,3 @@ requirejs.config({
     },
     waitSeconds: 15
 });
-
-require(['jQuery','log','modal','tipsy','functions','general']);
