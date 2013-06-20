@@ -8,9 +8,15 @@
 <!-- Asgar footer scripts -->
 <?=asg_scripts('footer')?>
 
-<script src="<?=asg_themefolder('js',false)?>jquery.sharrre-1.3.4.min.js" type="text/javascript"></script>
-<script src="<?=asg_themefolder('js',false)?>jquery.zclip.min.js" type="text/javascript"></script>
-<script src="<?=asg_themefolder('',false)?>custom.js" type="text/javascript"></script>
+<script type="text/javascript">
+require(['require-config.min'], function() {
+    require(['jQuery','log','modal','tipsy'], function ($) {
+    	$.getScript("<?=asg_themefolder('js',false)?>jquery.sharrre-1.3.4.min.js");
+    	$.getScript("<?=asg_themefolder('js',false)?>jquery.zclip.min.js");
+    	$.getScript("<?=asg_themefolder('',false)?>custom.js");
+    });
+});
+</script>
 
 </body>
 </html>
