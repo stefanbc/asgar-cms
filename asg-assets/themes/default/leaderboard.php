@@ -20,7 +20,7 @@
     ?>
     <div class="second_wrapper">
         <div id="leaderboard">
-            <div class="loading"><img src="asg-includes/images/preload.gif" /> Loading...</div>
+            <div class="loading"><img src="asg-includes/images/preload.gif" /> Gathering users...</div>
         </div>
         <?=asg_paginate($user_pages,'leaderboard')?>
     </div>    

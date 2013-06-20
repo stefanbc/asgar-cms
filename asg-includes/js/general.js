@@ -1,5 +1,5 @@
 //Global variables
-var FILE = 'asg-includes/ajax/general.php';
+var AJAX_FILE = 'asg-includes/ajax/general.php';
 var WIDTH = 300;
 
 // Log Header
@@ -36,7 +36,7 @@ $('.admin-nav-subitem[data-url]').click(function(e) {
 // Click on account action
 $('#account').click(function() {
     TINY.box.show({
-        url: FILE,
+        url: AJAX_FILE,
         post: 'action=user-details',
         width: WIDTH,
         height: 410,
@@ -71,7 +71,7 @@ $('#account').click(function() {
             });
             // Delete account
             $("#account_form").submit(function() {
-                $.post(FILE, {
+                $.post(AJAX_FILE, {
                     action: 'delete-account',
                     rand: Math.random()
                 }, function(data) {
@@ -100,7 +100,7 @@ $('#login').click(function() {
             tooltip('s');
             // Submit the form
             $("#login_form").submit(function() {
-                $.post(FILE, {
+                $.post(AJAX_FILE, {
                     action: 'login-create',
                     username: $('#username').val(),
                     password: $('#password').val(),
@@ -131,7 +131,7 @@ $('#login').click(function() {
                     opacity: 60,
                     openjs: function() {
                         $("#forgot_form").submit(function() {
-                            $.post(FILE, {
+                            $.post(AJAX_FILE, {
                                 action: 'forgot_pass',
                                 email: $('#forgot_email').val(),
                                 rand: Math.random()

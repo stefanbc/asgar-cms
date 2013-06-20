@@ -9,12 +9,11 @@ requirejs.config({
         general     : 'general.min'
     },
     shim: {
-        'jQuery'    : { exports: '$' },
         'modal'     : ['jQuery'],
         'tipsy'     : ['jQuery'],
         'editor'    : ['jQuery'],
         'functions' : ['jQuery'],
-        'general'   : { deps: ['log','jQuery','functions','modal','tipsy'] }
+        'general'   : { deps: ['jQuery','log','functions','modal','tipsy'] }
     },
     waitSeconds: 15
 });

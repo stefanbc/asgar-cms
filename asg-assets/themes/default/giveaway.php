@@ -19,7 +19,9 @@
         $invite_pages = ceil($queue_number/INVITES_PAGINATE_NUMBER);
     ?>
     <div class="invite_wrapper">
-        <div id="invites"></div>
+        <div id="invites">
+            <div class="loading"><img src="asg-includes/images/preload.gif" /> Gathering invites...</div>
+        </div>
         <?=asg_paginate($invite_pages,'invites')?>
     </div>
 <?php
