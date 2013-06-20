@@ -2,7 +2,7 @@
 
 	function change_info(data, type) {
 		// Change user info using Ajax
-		$.post(FILE, {
+		$.post(AJAX_FILE, {
 			action: 'change-info',
 			data: data,
 			type: type,
@@ -22,7 +22,7 @@
 
 	function logout() {
 		// The action
-		$.post(FILE, {
+		$.post(AJAX_FILE, {
 			action: 'logout',
 			rand: Math.random()
 		}, function(data) {
