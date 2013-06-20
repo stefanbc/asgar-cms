@@ -163,7 +163,7 @@ $('#logout').click(function() {
 // General tooltips
 tooltip('n');
 
-// Initial users page number to load
+// Initial posts page number to load
 $("#articles").load(AJAX_FILE, {
     'action'    : 'paginate-posts',
     'page'      : 0
@@ -171,7 +171,7 @@ $("#articles").load(AJAX_FILE, {
     $("#1-page_articles").addClass('active');
 });
 
-// Paginate invites
+// Paginate posts
 $(".page-content .paginate_item").click(function(){
     
     $("#articles").prepend('<div class="loading"><img src="asg-includes/images/preload.gif" /> Gathering data...</div>');
