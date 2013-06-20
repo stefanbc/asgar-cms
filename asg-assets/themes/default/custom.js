@@ -172,23 +172,15 @@ $("#invites").load(FILE, {
     $("#1-page_invites").addClass('active');
     tooltip('n');
     // Remove request
-    $('.remove_request').click(function(){
-        $('.remove_request').tipsy("hide");
+    $('.clean').click(function(){
+        $('.clean').tipsy("hide");
         var id = this.getAttribute('data-id');
         delete_request(id);
     });
 });
 
-// Initial users page number to load
-$("#leaderboard").load(FILE, {
-    'action'    : 'paginate-users',
-    'page'      : 0
-}, function() {
-    $("#1-page_leaderboard").addClass('active');
-});
-
 // Paginate invites
-$(".invite_wrapper .paginate_item").click(function(){
+$(".invites_wrapper .paginate_item").click(function(){
     
     $("#invites").prepend('<div class="loading"><img src="asg-includes/images/preload.gif" /> Gathering data...</div>');
 
@@ -197,7 +189,7 @@ $(".invite_wrapper .paginate_item").click(function(){
     // clicked_id[0] holds the page number we need 
 	var page_num = parseInt(clicked_id[0]); 
 	
-	$('.invite_wrapper .paginate_item').removeClass('active'); 
+	$('.invites_wrapper .paginate_item').removeClass('active'); 
 	
     // Post page number and load returned data into result element
     // Subtract 1 to get actual starting point
@@ -217,8 +209,16 @@ $(".invite_wrapper .paginate_item").click(function(){
 	$(this).addClass('active');
 });
 
+// Initial users page number to load
+$("#leaderboard").load(FILE, {
+    'action'    : 'paginate-users',
+    'page'      : 0
+}, function() {
+    $("#1-page_leaderboard").addClass('active');
+});
+
 // Paginate users
-$(".second_wrapper .paginate_item").click(function(){
+$(".leaderboard_wrapper .paginate_item").click(function(){
     
     $("#leaderboard").prepend('<div class="loading"><img src="asg-includes/images/preload.gif" /> Gathering data...</div>');
 
@@ -227,7 +227,7 @@ $(".second_wrapper .paginate_item").click(function(){
     // clicked_id[0] holds the page number we need 
 	var page_num = parseInt(clicked_id[0]); 
 	
-	$('.second_wrapper .paginate_item').removeClass('active'); 
+	$('.leaderboard_wrapper .paginate_item').removeClass('active'); 
 	
     // Post page number and load returned data into result element
     // Subtract 1 to get actual starting point

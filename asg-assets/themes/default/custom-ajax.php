@@ -207,7 +207,7 @@
                     echo '<li id="request_'. $item['id'] .'">';
                     
                     if(asg_user_info('user_type') == 1) {
-                        echo '<span class="remove_request tooltip" data-id="' . $item['id'] . '" original-title="Delete request!"></span>';
+                        echo '<span class="clean tooltip" data-id="' . $item['id'] . '" original-title="Delete request!"></span>';
                     }
                     
                     echo '<div class="item_wrapper">

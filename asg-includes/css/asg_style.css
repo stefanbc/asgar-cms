@@ -133,7 +133,7 @@ header .avatar {
     background:#fff; 
     z-index:800
 }
-.tclose {
+.clean, .tclose {
     position: absolute;
     top: 25px;
     right: 25px;
@@ -143,5 +143,6 @@ header .avatar {
     background-image: url("../images/modal_close.png");
     background-repeat: no-repeat;
 }
+.clean { top: 5px; right: 5px; }
 .box_inner { text-align: justify; font-size: 0.9em; }
 .box_inner h2 { margin: 5px 0; }

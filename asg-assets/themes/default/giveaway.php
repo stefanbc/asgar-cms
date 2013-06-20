@@ -18,7 +18,7 @@
         // Break invites record into pages
         $invite_pages = ceil($queue_number/INVITES_PAGINATE_NUMBER);
     ?>
-    <div class="invite_wrapper">
+    <div class="invites_wrapper">
         <?=asg_paginate($invite_pages,'invites')?>
     </div>
 <?php

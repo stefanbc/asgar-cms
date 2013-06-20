@@ -18,7 +18,7 @@
         // Break user records into pages
         $user_pages = ceil($user_count/PAGINATE_NUMBER);
     ?>
-    <div class="second_wrapper">
+    <div class="leaderboard_wrapper">
         <?=asg_paginate($user_pages,'leaderboard')?>
     </div>    
 <?php
