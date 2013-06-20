@@ -8,6 +8,7 @@
 <!-- Asgar footer scripts -->
 <?=asg_scripts('footer')?>
 
+<!-- Load all script using requirejs -->
 <script type="text/javascript">
 require(['<?=INCLUDES.JS?>require-config.min'], function() {
     require(['jQuery','log','modal','tipsy','functions','general'], function () {
