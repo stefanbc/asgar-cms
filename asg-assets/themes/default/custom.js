@@ -218,6 +218,8 @@ $(".invite_wrapper .paginate_item").click(function(){
 // Paginate users
 $(".second_wrapper .paginate_item").click(function(){
     
+    $("#leaderboard").prepend('<div class="loading"><img src="asg-includes/images/preload.gif" /> Loading...</div>');
+
     // ID of clicked element, split() to get page number.
 	var clicked_id = $(this).attr("id").split("-");
     // clicked_id[0] holds the page number we need 

@@ -89,6 +89,14 @@ header .avatar {
     border: none;
     color: #d6d6d6;
 }
+.loading { 
+    text-align: center; 
+    margin: 10px 0;
+}
+.loading img {
+    vertical-align: bottom;
+    margin-bottom: 2px;
+}
 .tbox {
     position:absolute; 
     display:none; 
