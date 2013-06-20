@@ -1,5 +1,4 @@
 	// Update user info
-
 	function change_info(data, type) {
 		// Change user info using Ajax
 		$.post(AJAX_FILE, {
@@ -18,8 +17,8 @@
 			}
 		});
 	}
-	// Logout function
 
+	// Logout function
 	function logout() {
 		// The action
 		$.post(AJAX_FILE, {
@@ -32,8 +31,8 @@
 			}
 		});
 	}
-	// Show a notification
 
+	// Show a notification
 	function notify(title, text, height) {
 		TINY.box.show({
 			html: '<div class="box_inner"><h2>' + title + '</h2>' + text + '</div>',
@@ -43,8 +42,8 @@
 			topsplit: 4
 		});
 	}
-	// Link function
 
+	// Link function
 	function href(selector) {
 		var url = selector.getAttribute('data-url');
 		if (url == 'admin') {
@@ -55,20 +54,19 @@
 	}
 
 	// Admin Link function
-
 	function admin_href(selector) {
 		var url = selector.getAttribute('data-url');
 		document.location = 'asg-admin?page=' + url;
 	}
-	// Input error
 
+	// Input error
 	function input_error(selector, text) {
 		$(selector).fadeIn(800, function() {
 			if (selector == '#password') {
 				$(selector)[0].type = 'text';
 			}
 			$(this).val(text).css({
-				'background': 'rgba(255,0,0,0.7)',
+				'background': 'rgba(255,0,0,1)',
 				'color': '#fff'
 			});
 		});
@@ -78,12 +76,12 @@
 			}
 			$(this).val('').css({
 				'background': '#fff',
-				'color': '#444'
+				'color': '#ccc'
 			});
 		});
 	}
-	// Tooltip function
 
+	// Tooltip function
 	function tooltip(gravity) {
 		// Set up the tooltip
 		$(".tooltip").each(function() {

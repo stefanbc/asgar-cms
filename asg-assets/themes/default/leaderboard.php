@@ -19,9 +19,6 @@
         $user_pages = ceil($user_count/PAGINATE_NUMBER);
     ?>
     <div class="second_wrapper">
-        <div id="leaderboard">
-            <div class="loading"><img src="asg-includes/images/preload.gif" /> Gathering users...</div>
-        </div>
         <?=asg_paginate($user_pages,'leaderboard')?>
     </div>    
 <?php

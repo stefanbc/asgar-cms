@@ -231,6 +231,40 @@
             }
                 
         break;
+
+        case 'paginate-posts':
+            
+            // Sanitize post value
+            $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
+            
+            //validate page number is really numaric
+            if(!is_numeric($page_number)){
+                die('Invalid page number!');
+            }
+            
+            //get current starting point of records
+            $position = ($page_number * PAGINATE_NUMBER);
+
+            $posts_query = asg_db_query("select * from " . TABLE_POSTS . " where post_status = 'published' order by post_date desc limit $position, " . PAGINATE_NUMBER . "");
+
+            if (!empty($posts_query)) {
+                foreach($posts_query as $post){
+
+                    $output_post = '<article class="post-wrapper">';
+                        $output_post .= '<div id="post-' . $post['ID'] . '">';
+                            $output_post .= '<div class="post-title"><a href="' . BLOG_PAGE . '/' . str_replace(" ","_",strtolower($post['post_title'])) . '" title="'.$post['post_title'].'"><h2>' . $post['post_title'] . '</h2></a></div>';
+                            $output_post .= '<div class="post-excerpt">' . asg_post_excerpt($post['post_content'], EXCERPT_LENGHT, BLOG_PAGE . '/' . str_replace(" ","_",strtolower($post['post_title'])), 'more') . '</div>';
+                            $output_post .= '<div class="post-meta"><i>Published at ' . date("h:i a / F j, Y", strtotime($post['post_date'])) . '</i></div>';
+                        $output_post .= '</div>';
+                    $output_post .= '</article>';
+                    echo $output_post;
+
+                }
+            } else {
+                echo 'No articles have been writen yet! Please com back later.';
+            }
+            
+        break;
                     
         endswitch;
     

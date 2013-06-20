@@ -24,9 +24,11 @@
     // Paginate function
     function asg_paginate($pages, $name){
         // Create pagination
+        $pagination     = '<div id="' . $name . '">';
+        $pagination     .= '<div class="loading"><img src="asg-includes/images/preload.gif" /> Gathering data...</div>';
+        $pagination     .= '</div>';
         if($pages > 1) {
-            $pagination    = '';
-            $pagination    .= '<ol class="pagination">';
+            $pagination     .= '<ol class="pagination">';
         	for($i = 1; $i <= $pages; $i++) {
         		$pagination .= '<li>';
                     $pagination .= '<span class="link paginate_item" id="' . $i . '-page_' . $name . '">' . $i . '</span>';
@@ -260,19 +262,14 @@
         return $the_content;
     }
 
-    // Check to find active posts and sisplay them on the proper page
+    // Check to find active posts and display them on the proper page
     function asg_has_posts(){
-        $check_posts_query = asg_db_query("select * from " . TABLE_POSTS . " where post_status = 'published' order by post_date desc");
-        foreach($check_posts_query as $post){
-            $output_post = '<article class="post-wrapper">';
-                $output_post .= '<div id="post-' . $post['ID'] . '">';
-                    $output_post .= '<div class="post-title"><a href="' . BLOG_PAGE . '/' . str_replace(" ","_",strtolower($post['post_title'])) . '" title="'.$post['post_title'].'"><h2>' . $post['post_title'] . '</h2></a></div>';
-                    $output_post .= '<div class="post-excerpt">' . asg_post_excerpt($post['post_content'], EXCERPT_LENGHT, BLOG_PAGE . '/' . str_replace(" ","_",strtolower($post['post_title'])), 'more') . '</div>';
-                    $output_post .= '<div class="post-meta"><i>Published at ' . date("h:i a / F j, Y", strtotime($post['post_date'])) . '</i></div>';
-                $output_post .= '</div>';
-            $output_post .= '</article>';
-            echo $output_post;
-        }
+        // Count articles for pagination
+        $queue_number = asg_db_num_rows("select * from " . TABLE_POSTS . " where post_status = 'published'");
+        // Break invites record into pages
+        $article_pages = ceil($queue_number/PAGINATE_NUMBER);
+        // Call for pagination
+        echo asg_paginate($article_pages,'articles');
     }
 
     // Generate an excerpt for the content using the number of words, an url

@@ -163,6 +163,36 @@ $('#logout').click(function() {
 // General tooltips
 tooltip('n');
 
+// Initial users page number to load
+$("#articles").load(AJAX_FILE, {
+    'action'    : 'paginate-posts',
+    'page'      : 0
+}, function() {
+    $("#1-page_articles").addClass('active');
+});
+
+// Paginate invites
+$(".page-content .paginate_item").click(function(){
+    
+    $("#articles").prepend('<div class="loading"><img src="asg-includes/images/preload.gif" /> Gathering data...</div>');
+
+    // ID of clicked element, split() to get page number.
+    var clicked_id = $(this).attr("id").split("-");
+    // clicked_id[0] holds the page number we need 
+    var page_num = parseInt(clicked_id[0]); 
+    
+    $('.page-content .paginate_item').removeClass('active'); 
+    
+    // Post page number and load returned data into result element
+    // Subtract 1 to get actual starting point
+    $("#articles").load(AJAX_FILE, {
+        'action'    : 'paginate-posts',
+        'page'      : (page_num - 1)
+    });
+
+    $(this).addClass('active');
+});
+
 // Analytics
 analytics.initialize({
     'Google Analytics': 'UA-23832918-8',
