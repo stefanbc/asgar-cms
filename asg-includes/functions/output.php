@@ -108,8 +108,8 @@
             break;
             case 'footer':
                 if(asg_user_role() == 1 && asg_user_loggedin() == true && asg_is_page("asg-admin?page=" . $_REQUEST['page'])){
-                    //$output .= '<script src="' . INCLUDES . ADMIN_EDITOR . 'ckeditor.js"></script>' . "\n\r";
-                    //$output .= '<script type="text/javascript">CKEDITOR.replace("editor");</script>' . "\n\r";
+                    $output .= '<script type="text/javascript" src="' . INCLUDES . ADMIN_EDITOR . 'tinymce.min.js"></script>' . "\n\r";
+                    $output .= '<script type="text/javascript">tinymce.init({ selector: "#editor", plugins: [ "advlist autolink lists link image charmap print preview anchor", "searchreplace visualblocks code fullscreen", "insertdatetime media table contextmenu paste moxiemanager" ], });</script>' . "\n\r";
                 }
                 $output .= '<script src="' . INCLUDES . JS . 'analytics.min.js"></script>' . "\n\r";
                 $output .= '<script src="' . INCLUDES . JS . 'require.js"></script>' . "\n\r";

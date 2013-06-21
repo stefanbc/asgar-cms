@@ -30,6 +30,7 @@
                 define('ADMIN_ASSETS_AJAX', ADMIN_ASSETS . 'ajax/');
                 define('ADMIN_ASSETS_CSS', ADMIN_ASSETS . 'css/');
                 define('ADMIN_ASSETS_JS', ADMIN_ASSETS . 'js/');
+            define('ADMIN_EDITOR', ADMIN_INCLUDES . 'editor/');
                 
         /*
         * The other includes
