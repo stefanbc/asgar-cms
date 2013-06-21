@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <i class="small right">*Before everything please read the <a href="disclaimer" title="Disclaimer">disclaimer</a>!</i>
+            <i class="right" style="margin-right: 25px;">*Before everything please read the <a href="disclaimer" title="Disclaimer">disclaimer</a>!</i>
         </div>
 <?
     } else {
