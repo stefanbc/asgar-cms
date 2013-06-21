@@ -2,15 +2,15 @@
 	/*
     * The basecamp for our app
     */
-    define('HTTP', 'http://stefanbc.kd.io/asgar');
+    define('HTTP', '');
 
     /*
     * The database configuration settings
     */
-    define('DB_SERVER','localhost');
-    define('DB_USER','stefanbc');
-    define('DB_PASS','f4vTewnFHZVhA4qZ');
-    define('DATABASE','stefanbc_asgar');
+    define('DB_SERVER','');
+    define('DB_USER','');
+    define('DB_PASS','');
+    define('DATABASE','');
     
     /*
     * You should change this on each install! Call ?salt to generate a new AUTH_SALT
