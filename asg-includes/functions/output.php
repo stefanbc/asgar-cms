@@ -109,7 +109,7 @@
             case 'footer':
                 if(asg_user_role() == 1 && asg_user_loggedin() == true && asg_is_page("asg-admin?page=" . $_REQUEST['page'])){
                     $output .= '<script type="text/javascript" src="' . INCLUDES . ADMIN_EDITOR . 'tinymce.min.js"></script>' . "\n\r";
-                    $output .= '<script type="text/javascript">tinymce.init({ selector: "#editor", plugins: [ "advlist autolink lists link image charmap print preview anchor", "searchreplace visualblocks code fullscreen", "insertdatetime media table contextmenu paste moxiemanager" ], });</script>' . "\n\r";
+                    $output .= '<script type="text/javascript">tinymce.init({ selector: "#editor", plugins: [ "advlist autolink lists link image charmap print preview anchor", "searchreplace visualblocks code fullscreen", "insertdatetime media table contextmenu paste moxiemanager" ], toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image" });</script>' . "\n\r";
                 }
                 $output .= '<script src="' . INCLUDES . JS . 'analytics.min.js"></script>' . "\n\r";
                 $output .= '<script src="' . INCLUDES . JS . 'require.js"></script>' . "\n\r";
