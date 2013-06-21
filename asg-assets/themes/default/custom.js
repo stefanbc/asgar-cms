@@ -182,7 +182,7 @@ $("#invites").load(FILE, {
 // Paginate invites
 $(".invites_wrapper .paginate_item").click(function(){
     
-    $("#invites").prepend('<div class="loading"><img src="asg-includes/images/preload.gif" /> Gathering data...</div>');
+    $("#invites").append('<div class="loading"><img src="asg-includes/images/preload.gif" /> Gathering data...</div>');
 
     // ID of clicked element, split() to get page number.
 	var clicked_id = $(this).attr("id").split("-");
@@ -220,7 +220,7 @@ $("#leaderboard").load(FILE, {
 // Paginate users
 $(".leaderboard_wrapper .paginate_item").click(function(){
     
-    $("#leaderboard").prepend('<div class="loading"><img src="asg-includes/images/preload.gif" /> Gathering data...</div>');
+    $("#leaderboard").append('<div class="loading"><img src="asg-includes/images/preload.gif" /> Gathering data...</div>');
 
     // ID of clicked element, split() to get page number.
 	var clicked_id = $(this).attr("id").split("-");

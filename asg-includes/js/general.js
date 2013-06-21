@@ -174,7 +174,7 @@ $("#articles").load(AJAX_FILE, {
 // Paginate posts
 $(".page-content .paginate_item").click(function(){
     
-    $("#articles").prepend('<div class="loading"><img src="asg-includes/images/preload.gif" /> Gathering data...</div>');
+    $("#articles").append('<div class="loading"><img src="asg-includes/images/preload.gif" /> Gathering data...</div>');
 
     // ID of clicked element, split() to get page number.
     var clicked_id = $(this).attr("id").split("-");
