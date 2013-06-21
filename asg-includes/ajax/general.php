@@ -11,7 +11,7 @@
                         
             // Get the posted values
             $username  = $con->escape_string(htmlspecialchars($_POST['username'],ENT_QUOTES));
-            $password  = $con->escape_string(sha256($_POST['password'] . AUTH_SALT));
+            $password  = $con->escape_string(hash('sha256',$_POST['password'] . AUTH_SALT));
             
             if(empty($username) || $username == 'You forgot to enter the username!'){
                 echo 'No 1';  
@@ -121,7 +121,7 @@
                 if(!empty($sql)){
                     
                     $new_pass = random_gen(12,false);
-                    $encrypted_pass = sha256($new_pass . AUTH_SALT);
+                    $encrypted_pass = hash('sha256',$new_pass . AUTH_SALT);
                     
                     $reset_query = asg_db_update("update " . TABLE_USERS . " set password = '" . $encrypted_pass . "' where email = '" . $email . "' ");
                     
@@ -204,7 +204,7 @@
             $type  = $con->escape_string(htmlspecialchars($_POST['type'],ENT_QUOTES));
             
             if($type == 'password'){
-                $data = sha256($data . AUTH_SALT);
+                $data = hash('sha256',$data . AUTH_SALT);
             }
             
             $update_query = asg_db_update("update " . TABLE_USERS . " set " . $type . " = '" . $data . "' where username = '" . $_SESSION['username'] . "'");
