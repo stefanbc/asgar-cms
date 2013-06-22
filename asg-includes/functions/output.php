@@ -160,6 +160,7 @@
         } else {
             $output = '<span class="meta-item tooltip" id="stats" original-title="in development">stats</span>';
         }
+        $output .= '<a href="http://github.com/stefanbc/Asgar" class="meta-item">Made with Asgar</a>';
         return $output;
     }
 

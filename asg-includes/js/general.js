@@ -1,5 +1,5 @@
 //Global variables
-var AJAX_FILE = 'asg-includes/ajax/general.php';
+var AJAX_FILE = 'asg-includes/ajax/asgar-general.php';
 var WIDTH = 300;
 
 // Log Header

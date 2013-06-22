@@ -246,6 +246,7 @@ aside.sidebar-wrapper .meta-wrapper .meta-item {
     display: block;
     margin-top: 5px;
 }
+aside.sidebar-wrapper .meta-wrapper .meta-item:after { margin-top: 3px; }
 .content-wrapper {
     float: left;
     overflow: hidden;
