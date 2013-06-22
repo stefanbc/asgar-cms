@@ -122,18 +122,41 @@
         // Check if the user is logged in
         if(isset($user)){
             $output  = '<header>' . "\n\r";
-                $output .= '<div class="logo" data-url="' . HTTP . '">' . "\n\r";
-                    if (asg_user_role() == 1 && (asg_is_page("asg-admin") || isset($_REQUEST['panel']))) {
+                if (asg_user_role() == 1 && (asg_is_page("asg-admin") || isset($_REQUEST['panel']))) {
+                    $output .= '<div class="logo" data-url="asg-admin">' . "\n\r";
                         $output .= '<span class="tagline">' . WEBSITE_NAME . ' Admin Panel</span>'. "\n\r";
-                    } else {
+                    $output .= '</div>' . "\n\r";
+                } else {
+                    $output .= '<div class="logo" data-url="' . HTTP . '">' . "\n\r";
                         $output .= '<span class="tagline">' . WEBSITE_NAME . '</span>'. "\n\r";
-                    }
-                $output .= '</div>' . "\n\r";
+                    $output .= '</div>' . "\n\r";
+                }
                 $output .= '<section>' . "\n\r";
                 $output .= '<nav>' . "\n\r"; 
                     // The user is admin and in the admin panel
                     if (asg_user_role() == 1 && (asg_is_page("asg-admin") || isset($_REQUEST['panel']))) {
-                        $output .= '<span class="admin-item entypo-docs icon-spacer" id="admin" data-url="list_posts">posts</span>' . "\n\r";
+                        $output .= '<span class="admin-item" id="admin" data-url="list_posts">
+                            <span class="admin-item-icon entypo-docs icon-spacer"></span>
+                            <span class="admin-item-text">posts</span>
+                            <ul class="admin-item-submenu">
+                                <li class="admin-item-subitem" data-url="list_posts">
+                                    <span class="admin-subitem-icon entypo-list icon-spacer"></span>
+                                    <span class="admin-subitem-text">all posts</span>
+                                </li>
+                                <li class="admin-item-subitem" data-url="new_post">
+                                    <span class="admin-subitem-icon entypo-list-add icon-spacer"></span>
+                                    <span class="admin-subitem-text">add new</span>
+                                </li>
+                                <li class="admin-item-subitem" data-url="categories">
+                                    <span class="admin-subitem-icon entypo-archive icon-spacer"></span>
+                                    <span class="admin-subitem-text">categories</span>
+                                </li>
+                                <li class="admin-item-subitem" data-url="tags">
+                                    <span class="admin-subitem-icon entypo-tag icon-spacer"></span>
+                                    <span class="admin-subitem-text">tags</span>
+                                </li>
+                            </ul>
+                            </span>' . "\n\r";
                         $output .= '<span class="admin-item entypo-doc-text icon-spacer" id="admin" data-url="list_pages">pages</span>' . "\n\r";
                         $output .= '<span class="admin-item entypo-users icon-spacer" id="admin" data-url="list_users">users</span>' . "\n\r";
                         $output .= '<span class="admin-item entypo-palette icon-spacer" id="admin" data-url="apperence">apperence</span>' . "\n\r";

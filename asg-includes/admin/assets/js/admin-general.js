@@ -11,7 +11,7 @@ $('.admin-item[data-url]').click(function() {
 });
 
 // Admin Panel Sub Navigation
-$('.admin-subitem[data-url]').click(function(e) {
+$('.admin-item-subitem[data-url]').click(function(e) {
 	e.stopPropagation();
 	admin_href(this);
 });
