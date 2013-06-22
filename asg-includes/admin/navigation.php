@@ -1,27 +1,27 @@
-<ul class="admin-nav">
-    <li class="admin-nav-item entypo-docs icon-spacer" data-url="list_posts">
-        Posts
-        <ul class="admin-nav-submenu">
-            <li class="admin-nav-subitem entypo-list icon-spacer" data-url="list_posts">All Posts</li>
-            <li class="admin-nav-subitem entypo-list-add icon-spacer" data-url="new_post">Add New</li>
-            <li class="admin-nav-subitem entypo-archive icon-spacer" data-url="categories">Categories</li>
-            <li class="admin-nav-subitem entypo-tag icon-spacer" data-url="tags">Tags</li>
+<ul class="admin-navigation">
+    <li class="admin-navigation-item" data-url="list_posts">
+        <span class="admin-navigation-entry entypo-docs link icon-spacer">Posts</span>
+        <ul class="admin-navigation-submenu">
+            <li class="admin-navigation-subitem" data-url="list_posts"><span class="admin-navigation-entry entypo-list link icon-spacer">All Posts</span></li>
+            <li class="admin-navigation-subitem" data-url="new_post"><span class="admin-navigation-entry entypo-list-add link icon-spacer">Add New</span></li>
+            <li class="admin-navigation-subitem" data-url="categories"><span class="admin-navigation-entry entypo-archive link icon-spacer">Categories</span></li>
+            <li class="admin-navigation-subitem" data-url="tags"><span class="admin-navigation-entry entypo-tag link icon-spacer">Tags</span></li>
         </ul>
     </li>
-    <li class="admin-nav-item entypo-doc-text icon-spacer" data-url="list_pages">
-        Pages
-        <ul class="admin-nav-submenu">
-            <li class="admin-nav-subitem entypo-list icon-spacer" data-url="list_pages">All Pages</li>
-            <li class="admin-nav-subitem entypo-list-add icon-spacer" data-url="new_page">Add New</li>
+    <li class="admin-navigation-item" data-url="list_pages">
+        <span class="admin-navigation-entry entypo-doc-text link icon-spacer">Pages</span>
+        <ul class="admin-navigation-submenu">
+            <li class="admin-navigation-subitem" data-url="list_pages"><span class="admin-navigation-entry entypo-list link icon-spacer">All Pages</span></li>
+            <li class="admin-navigation-subitem" data-url="new_page"><span class="admin-navigation-entry entypo-list-add link icon-spacer">Add New</span></li>
         </ul>
     </li>
-    <li class="admin-nav-item entypo-users icon-spacer" data-url="list_users">
-        Users
-        <ul class="admin-nav-submenu">
-            <li class="admin-nav-subitem entypo-list icon-spacer" data-url="list_users">All Users</li>
-            <li class="admin-nav-subitem entypo-list-add icon-spacer" data-url="new_user">Add New</li>
+    <li class="admin-navigation-item" data-url="list_users">
+        <span class="admin-navigation-entry entypo-users link icon-spacer">Users</span>
+        <ul class="admin-navigation-submenu">
+            <li class="admin-navigation-subitem" data-url="list_users"><span class="admin-navigation-entry entypo-list link icon-spacer">All Users</span></li>
+            <li class="admin-navigation-subitem" data-url="new_user"><span class="admin-navigation-entry entypo-list-add link icon-spacer">Add New</span></li>
         </ul>
     </li>
-    <li class="admin-nav-item entypo-palette icon-spacer" data-url="apperence">Apperence<li>
-    <li class="admin-nav-item entypo-tools icon-spacer" data-url="settings">Settings</li>
+    <li class="admin-navigation-item" data-url="apperence"><span class="admin-navigation-entry entypo-palette link icon-spacer">Apperence</span></li>
+    <li class="admin-navigation-item" data-url="settings"><span class="admin-navigation-entry entypo-tools link icon-spacer">Settings</span></li>
 </ul>
