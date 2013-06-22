@@ -12,7 +12,7 @@
 <script type="text/javascript">
 require(['<?=INCLUDES.JS?>require-config'], function() {
     require(['jQuery','log','modal','tipsy','functions','general'], function () {
-    	$.getScript("<?=INCLUDES.ADMIN_ASSETS_JS?>admin_general.js");
+    	$.getScript("<?=INCLUDES.ADMIN_ASSETS_JS?>admin-general.js");
     });
 });
 </script>
