@@ -169,7 +169,7 @@ div button {
 }
 .page-wrapper {
     width: 900px;
-    min-height: 600px;
+    min-height: 530px;
     margin: 40px auto;
     overflow: hidden;
     display: block;
@@ -183,17 +183,15 @@ aside.sidebar-wrapper {
     padding-right: 25px;
     border-right: 1px solid #eee;
 }
-.content-wrapper {
-    float: left;
-    overflow: hidden;
-    display: block;
-    width: 640px;
-    text-align: justify;
+aside.sidebar-wrapper h2 {
+    text-align: right;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
 }
 ul.main-navigation {
     list-style-type: none;
     margin: 0;
-    padding: 0 0 15px 0;
 }
 ul.main-navigation li {
     text-align: right;
@@ -237,6 +235,18 @@ ul.main-navigation li a.active:after {
     margin-top: 7px;
     margin-left: 5px;
     opacity: 1;
+}
+aside.sidebar-wrapper .meta-wrapper{ text-align: right; }
+aside.sidebar-wrapper .meta-wrapper .meta-item {
+    margin: 10px 0;
+    display: block;
+}
+.content-wrapper {
+    float: left;
+    overflow: hidden;
+    display: block;
+    width: 640px;
+    text-align: justify;
 }
 h1.page-title, h1.post-title, .post-title h2 { margin-top: 0; }
 .sections-wrapper { overflow: hidden; }

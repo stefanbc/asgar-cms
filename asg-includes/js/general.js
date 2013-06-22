@@ -18,19 +18,8 @@ $('.anchor[data-url]').click(function() {
 });
 
 // Header Navigation
-$('.nav_item[data-url]').click(function() {
+$('.nav-item[data-url]').click(function() {
     href(this);
-});
-
-// Admin Panel Navigation
-$('.admin-nav-item[data-url]').click(function() {
-    admin_href(this);
-});
-
-// Admin Panel Sub Navigation
-$('.admin-nav-subitem[data-url]').click(function(e) {
-    e.stopPropagation();
-    admin_href(this);
 });
 
 // Click on account action
@@ -165,29 +154,29 @@ tooltip('n');
 
 // Initial posts page number to load
 $("#articles").load(AJAX_FILE, {
-    'action'    : 'paginate-posts',
-    'page'      : 0
+    'action': 'paginate-posts',
+    'page': 0
 }, function() {
     $("#1-page_articles").addClass('active');
 });
 
 // Paginate posts
-$(".page-content .paginate_item").click(function(){
-    
+$(".page-content .paginate_item").click(function() {
+
     $("#articles").append('<div class="loading"><img src="asg-includes/images/preload.gif" /> Gathering data...</div>');
 
     // ID of clicked element, split() to get page number.
     var clicked_id = $(this).attr("id").split("-");
     // clicked_id[0] holds the page number we need 
-    var page_num = parseInt(clicked_id[0]); 
-    
-    $('.page-content .paginate_item').removeClass('active'); 
-    
+    var page_num = parseInt(clicked_id[0]);
+
+    $('.page-content .paginate_item').removeClass('active');
+
     // Post page number and load returned data into result element
     // Subtract 1 to get actual starting point
     $("#articles").load(AJAX_FILE, {
-        'action'    : 'paginate-posts',
-        'page'      : (page_num - 1)
+        'action': 'paginate-posts',
+        'page': (page_num - 1)
     });
 
     $(this).addClass('active');

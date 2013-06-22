@@ -18,9 +18,9 @@
     // Header part
     require(INCLUDES . ADMIN_INCLUDES . FILE_ADMIN_HEADER);
 
-    $page = $_REQUEST['page'];
+    $panel = $_REQUEST['panel'];
     
-    switch($page):
+    switch($panel):
         case 'list_posts':
             include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_LIST_POSTS);
         break;

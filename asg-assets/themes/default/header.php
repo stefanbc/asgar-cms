@@ -33,6 +33,7 @@
 <div class="page-wrapper">
 	<!-- sidebar -->
 	<aside class="sidebar-wrapper">
+		<h2><?=WEBSITE_NAME?></h2>
 		<!-- main navigation -->
 		<div class="navigation-wrapper">
 			<?=asg_the_nav(0,1)?>
@@ -40,6 +41,10 @@
 		<!-- search form -->
 		<div class="search-wrapper">
 			<?=asg_search()?>
+		</div>
+		<h2>Meta</h2>
+		<div class="meta-wrapper">
+			<?=asg_sidebar_meta($asg_auth)?>
 		</div>
 	</aside>
 	<!-- begin content -->

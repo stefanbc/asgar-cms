@@ -100,14 +100,14 @@
             case 'header':
                 $output = '<link href="//weloveiconfonts.com/api/?family=entypo" rel="stylesheet" type="text/css">' . "\n\r";
                 $output .= '<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300|Open+Sans:600|Roboto:300,400" rel="stylesheet" type="text/css">';
-                $output .= '<link href="' . INCLUDES . CSS . 'asg_style.css" rel="stylesheet" type="text/css">' . "\n\r";
+                $output .= '<link href="' . INCLUDES . CSS . 'asgar-general.css" rel="stylesheet" type="text/css">' . "\n\r";
                 $output .= '<link href="' . INCLUDES . CSS . 'tipsy.css" rel="stylesheet" type="text/css">' . "\n\r";
-                if(asg_user_role() == 1 && asg_user_loggedin() == true && (asg_is_page("asg-admin?page=" . $_REQUEST['page']) || asg_is_page("asg-admin"))){
+                if(asg_user_role() == 1 && asg_user_loggedin() == true && (asg_is_page("asg-admin") || isset($_REQUEST['panel']))) {
                     $output .= '<link href="' . INCLUDES . ADMIN_ASSETS_CSS . 'admin-style.css" rel="stylesheet" type="text/css">' . "\n\r";
                 }
             break;
             case 'footer':
-                if(asg_user_role() == 1 && asg_user_loggedin() == true && asg_is_page("asg-admin?page=" . $_REQUEST['page'])){
+                if(asg_user_role() == 1 && asg_user_loggedin() == true && (asg_is_page("asg-admin") || isset($_REQUEST['panel']))) {
                     $output .= '<script src="' . INCLUDES . ADMIN_EDITOR . 'tinymce.min.js"></script>' . "\n\r";
                 }
                 $output .= '<script src="' . INCLUDES . JS . 'analytics.min.js"></script>' . "\n\r";
@@ -119,27 +119,49 @@
     
     // The admin bar at the top
     function asg_admin_bar($user){
-        $output  = '<header>' . "\n\r";
-            $output .= '<div class="logo" data-url="' . HTTP . '">' . "\n\r";
-                $output .= '<span class="tagline">' . WEBSITE_NAME . '</span>'. "\n\r";
-            $output .= '</div>' . "\n\r";
-            $output .= '<section>' . "\n\r";
-            $output .= '<nav>' . "\n\r";
-                if(isset($user)){
-                    $output .= asg_get_avatar(asg_user_info('email'),20,true) . "\n\r";
-                    $output .= '<span class="nav_item" id="user" data-url="http://koding.com/' . $user . '">' . asg_user_greeting() . $user . ' !</span>' . "\n\r";
-                    if(asg_user_role() == 1) {
-                        $output .= '<span class="nav_item entypo-cog icon-spacer admin-only" id="admin" data-url="admin">admin panel</span>' . "\n\r";
+        // Check if the user is logged in
+        if(isset($user)){
+            $output  = '<header>' . "\n\r";
+                $output .= '<div class="logo" data-url="' . HTTP . '">' . "\n\r";
+                    if (asg_user_role() == 1 && (asg_is_page("asg-admin") || isset($_REQUEST['panel']))) {
+                        $output .= '<span class="tagline">Asgar Admin Panel</span>'. "\n\r";
+                    } else {
+                        $output .= '<span class="tagline">' . WEBSITE_NAME . '</span>'. "\n\r";
                     }
-                    $output .= '<span class="nav_item entypo-user icon-spacer" id="account">account</span>' . "\n\r";
-                    $output .= '<span class="nav_item entypo-trophy icon-spacer tooltip" id="badges" original-title="Coming soon!">badges</span>' . "\n\r";
-                    $output .= '<span class="nav_item entypo-logout icon-spacer" id="logout">logout</span>' . "\n\r";
-                } else {
-                    $output .= '<span class="nav_item entypo-login icon-spacer" id="login">login / create account</span>' . "\n\r";
-                }
-            $output .= '</nav>' . "\n\r";
-            $output .= '</section>' . "\n\r";
-        $output .= '</header>' . "\n\r";
+                $output .= '</div>' . "\n\r";
+                $output .= '<section>' . "\n\r";
+                $output .= '<nav>' . "\n\r"; 
+                    // The user is admin and in the admin panel
+                    if (asg_user_role() == 1 && (asg_is_page("asg-admin") || isset($_REQUEST['panel']))) {
+                        $output .= '<span class="admin-item entypo-docs icon-spacer" id="admin" data-url="list_posts">posts</span>' . "\n\r";
+                        $output .= '<span class="admin-item entypo-doc-text icon-spacer" id="admin" data-url="list_pages">pages</span>' . "\n\r";
+                        $output .= '<span class="admin-item entypo-users icon-spacer" id="admin" data-url="list_users">users</span>' . "\n\r";
+                        $output .= '<span class="admin-item entypo-palette icon-spacer" id="admin" data-url="apperence">apperence</span>' . "\n\r";
+                        $output .= '<span class="admin-item entypo-tools icon-spacer" id="admin" data-url="settings">settings</span>' . "\n\r";
+                    }
+                    // The user is admin not on the admin panel
+                    if(asg_user_role() == 1 && !asg_is_page("asg-admin") && !isset($_REQUEST['panel'])) {
+                        $output .= '<span class="nav-item entypo-cog icon-spacer" id="admin" data-url="admin">admin panel</span>' . "\n\r";
+                    }
+                    $output .= '<span class="nav-item entypo-user icon-spacer" id="account">account</span>' . "\n\r";
+                    // The user is not in the admin panel
+                    if (!asg_is_page("asg-admin") && !isset($_REQUEST['panel'])) {
+                        $output .= '<span class="nav-item entypo-trophy icon-spacer tooltip" id="badges" original-title="Coming soon!">badges</span>' . "\n\r";
+                    }
+                    $output .= '<span class="nav-item entypo-logout icon-spacer" id="logout">logout</span>' . "\n\r";
+                    $output .= '<span class="nav-item" id="user" data-url="http://koding.com/' . $user . '">' . asg_user_greeting() . $user . ' !</span>' . "\n\r";
+                    $output .= asg_get_avatar(asg_user_info('email'),20,true) . "\n\r";
+                $output .= '</nav>' . "\n\r";
+                $output .= '</section>' . "\n\r";
+            $output .= '</header>' . "\n\r";
+        }
+        return $output;
+    }
+
+    function asg_sidebar_meta($user){
+        if (!isset($user)) {
+            $output = '<span class="meta-item link" id="login">login / create account</span>';
+        }
         return $output;
     }
 
