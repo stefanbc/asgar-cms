@@ -193,17 +193,20 @@ ul.main-navigation {
     list-style-type: none;
     margin: 0;
 }
-ul.main-navigation li {
+ul.main-navigation li,
+aside.sidebar-wrapper .meta-wrapper .meta-item {
     text-align: right;
     text-transform: uppercase;
     padding: 5px;
 }
-ul.main-navigation li a {
+ul.main-navigation li a,
+aside.sidebar-wrapper .meta-wrapper .meta-item {
     text-decoration: none;
     font-weight: 400;
     font-size: 0.8em;
 }
-ul.main-navigation li a:after {
+ul.main-navigation li a:after,
+aside.sidebar-wrapper .meta-wrapper .meta-item:after {
     content: "";
     width: 0px;
     height: 0px;
@@ -222,7 +225,8 @@ ul.main-navigation li a:after {
     -ms-transition: all 0.5s ease;
     transition: all 0.5s ease;  
 }
-ul.main-navigation li a:hover:after { zoom: 1; opacity: 1; filter: alpha(opacity=100); }
+ul.main-navigation li a:hover:after,
+aside.sidebar-wrapper .meta-wrapper .meta-item:hover:after { zoom: 1; opacity: 1; filter: alpha(opacity=100); }
 ul.main-navigation li a.active { color: #00A256; }
 ul.main-navigation li a.active:after {
     content: "";
@@ -238,14 +242,9 @@ ul.main-navigation li a.active:after {
 }
 aside.sidebar-wrapper .meta-wrapper{ text-align: right; }
 aside.sidebar-wrapper .meta-wrapper .meta-item {
-    text-align: right;
-    text-transform: uppercase;
-    padding: 5px;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 0.8em;
-    display: block;
     cursor: pointer;
+    display: block;
+    margin-top: 5px;
 }
 .content-wrapper {
     float: left;

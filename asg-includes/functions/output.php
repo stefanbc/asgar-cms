@@ -124,7 +124,7 @@
             $output  = '<header>' . "\n\r";
                 $output .= '<div class="logo" data-url="' . HTTP . '">' . "\n\r";
                     if (asg_user_role() == 1 && (asg_is_page("asg-admin") || isset($_REQUEST['panel']))) {
-                        $output .= '<span class="tagline">Asgar Admin Panel</span>'. "\n\r";
+                        $output .= '<span class="tagline">' . WEBSITE_NAME . ' Admin Panel</span>'. "\n\r";
                     } else {
                         $output .= '<span class="tagline">' . WEBSITE_NAME . '</span>'. "\n\r";
                     }
@@ -146,7 +146,7 @@
                     $output .= '<span class="nav-item entypo-user icon-spacer" id="account">account</span>' . "\n\r";
                     // The user is not in the admin panel
                     if (!asg_is_page("asg-admin") && !isset($_REQUEST['panel'])) {
-                        $output .= '<span class="nav-item entypo-trophy icon-spacer tooltip" id="badges" original-title="Coming soon!">badges</span>' . "\n\r";
+                        $output .= '<span class="nav-item entypo-trophy icon-spacer tooltip" id="badges" original-title="in development">badges</span>' . "\n\r";
                     }
                     $output .= '<span class="nav-item entypo-logout icon-spacer" id="logout">logout</span>' . "\n\r";
                     $output .= '<span class="nav-item" id="user" data-url="http://koding.com/' . $user . '">' . asg_user_greeting() . $user . ' !</span>' . "\n\r";
@@ -161,6 +161,8 @@
     function asg_sidebar_meta($user){
         if (!isset($user)) {
             $output = '<span class="meta-item" id="login">login / create account</span>';
+        } else {
+            $output = '<span class="meta-item tooltip" id="stats" original-title="in development">stats</span>';
         }
         return $output;
     }

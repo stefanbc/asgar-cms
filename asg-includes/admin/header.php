@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<title>Asgar Admin Panel</title>
+<title><?=WEBSITE_NAME?> Admin Panel</title>
 
 <base href="<?=HTTP . '/'?>">
 
