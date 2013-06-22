@@ -1,0 +1,155 @@
+/**
+ * The main css file for Asgar
+ *
+ * @package Asgar
+ */
+@charset "UTF-8";
+/* entypo font */
+[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+}
+header {
+    overflow: hidden;
+	padding: 5px 20px;
+	background: rgba(34,34,34,1);
+	box-shadow: 0 0 2px 2px rgba(0,0,0,0.5);
+}
+header section {
+    overflow: hidden;
+    float: right;
+    text-align: right;
+    margin-top: 6px;
+}
+.logo {
+    height: 30px;
+    display: block;
+    position: relative;
+    float: left;
+    cursor: pointer;
+}
+.tagline {
+    overflow: hidden;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.1em;
+	font-weight: 300;
+	float: right;
+	margin-top: 3px;
+	color: rgba(255, 255, 255, 1);
+	text-shadow: #000 1px 2px 2px;
+	text-transform: uppercase;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+header .avatar {
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.7);
+    padding: 1px;
+    vertical-align: top;
+    height: 20px;
+    width: 20px;
+}
+.nav-item,
+.admin-item { 
+    cursor: pointer; 
+    font-size: 0.8em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    text-shadow: #000 1px 2px 2px;
+    margin: 0 5px;
+    padding: 0 5px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.tagline:hover, 
+.tagline:focus, 
+.nav-item:hover, 
+.nav-item:focus,
+.admin-item:hover, 
+.admin-item:focus { color: #00A256; }
+.icon-spacer:before {
+    padding: 5px;
+    color: #fff;
+    font-size: 1.3em;
+}
+.search-wrapper { 
+    position: relative; 
+    padding: 10px 0; 
+}
+.search-wrapper #search_button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    color: #d6d6d6;
+}
+.loading { 
+    text-align: center; 
+    margin: 10px 0;
+}
+.loading img {
+    vertical-align: bottom;
+    margin-bottom: 2px;
+}
+.tbox {
+    position:absolute; 
+    display:none; 
+    padding:14px 17px; 
+    z-index:900;
+}
+.tinner {
+    padding:20px; 
+    -webkit-box-shadow: 0 4px 16px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 4px 16px rgba(0,0,0,.2);
+    box-shadow: 0 4px 16px rgba(0,0,0,.2);
+    outline: 0;
+    border: 1px solid #acacac;
+    border: 1px solid rgba(0,0,0,.333);
+    background-image: url("../images/preload.gif");
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-clip: padding-box;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+}
+.tmask {
+    position:absolute; 
+    display:none; 
+    top:0; 
+    left:0; 
+    height:100%; 
+    width:100%; 
+    background:#fff; 
+    z-index:800
+}
+.clean, .tclose {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background-image: url("../images/modal_close.png");
+    background-repeat: no-repeat;
+}
+.clean { top: 5px; right: 5px; }
+.box_inner { text-align: justify; font-size: 0.9em; }
+.box_inner h2 { margin: 5px 0; }
