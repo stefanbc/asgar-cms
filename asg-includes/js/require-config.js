@@ -5,8 +5,8 @@ requirejs.config({
         log         : 'log',
         modal       : 'modal.min',
         tipsy       : 'tipsy.min',
-        functions   : 'functions.min',
-        general     : 'general.min'
+        functions   : 'functions',
+        general     : 'general'
     },
     shim: {
         'modal'     : ['jQuery'],

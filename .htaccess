@@ -1,5 +1,8 @@
     RewriteEngine On
-    
+
+    # Dev purpose only
+    RewriteBase /~stefanbc/stefanbc.koding.com/website/asgar
+        
     <IfModule mod_expires.c>
     
     # Enable expirations
