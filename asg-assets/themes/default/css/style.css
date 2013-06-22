@@ -238,8 +238,14 @@ ul.main-navigation li a.active:after {
 }
 aside.sidebar-wrapper .meta-wrapper{ text-align: right; }
 aside.sidebar-wrapper .meta-wrapper .meta-item {
-    margin: 10px 0;
+    text-align: right;
+    text-transform: uppercase;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.8em;
     display: block;
+    cursor: pointer;
 }
 .content-wrapper {
     float: left;

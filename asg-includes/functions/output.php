@@ -160,7 +160,7 @@
 
     function asg_sidebar_meta($user){
         if (!isset($user)) {
-            $output = '<span class="meta-item link" id="login">login / create account</span>';
+            $output = '<span class="meta-item" id="login">login / create account</span>';
         }
         return $output;
     }
