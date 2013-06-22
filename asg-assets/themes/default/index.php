@@ -16,8 +16,6 @@
         $invites_number = asg_db_num_rows("select * from " . TABLE_INVITES . " where status = '1' order by date asc");
         // Count the number of people in queue
         $queue_number = asg_db_num_rows("select * from " . TABLE_INVITES . " where status = '0'");
-        // Count the number of people invited by the user
-        $user_invite_number = asg_db_num_rows("select * from " . TABLE_INVITES . " where status = '1' and invited_by = '" . $asg_auth . "' order by date asc");
 ?>
         <div class="sections-wrapper">
             <!-- Request an invite section -->
@@ -37,11 +35,6 @@
     		<div class="right-section">
     			<h1>Giveaway Invites!</h1>
     			Do you want to help others experience Koding? Giveaway some of your invites!
-                <?php
-                    if(isset($asg_auth)){
-                        echo '<span id="user_invited">You have invited ' . $user_invite_number . ' people so far!</span>';
-                    }
-                ?>
     			<div class="bottom">
     				<button class="button anchor" id="giveaway" data-url="giveaway">giveaway</button>
     			</div>

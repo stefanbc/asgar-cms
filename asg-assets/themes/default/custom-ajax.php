@@ -280,11 +280,11 @@
         
         break;
         
-        case 'badges':
+        case 'stats':
             
             $invites_number = asg_db_num_rows("select * from " . TABLE_INVITES . " where status = '1' and invited_by = '" . asg_user_info('username') . "'");
                 
-            echo '<div class="box_inner"><h2>Badges</h2>You can see your rank and the badges you earned here!<br>';
+            echo '<div class="box_inner"><h2>Stats</h2>You can see your rank and the badges you earned here!<br>';
                 echo '<div class="spacer2">Number of people invited: ' . $invites_number . '</div>';
                 echo '<div class="spacer2">Rank: ' . asg_user_title($invites_number) . '</div>';
                 echo '<div class="spacer2"></div>';

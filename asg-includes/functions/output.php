@@ -144,10 +144,6 @@
                         $output .= '<span class="nav-item entypo-cog icon-spacer" id="admin" data-url="admin">admin panel</span>' . "\n\r";
                     }
                     $output .= '<span class="nav-item entypo-user icon-spacer" id="account">account</span>' . "\n\r";
-                    // The user is not in the admin panel
-                    if (!asg_is_page("asg-admin") && !isset($_REQUEST['panel'])) {
-                        $output .= '<span class="nav-item entypo-trophy icon-spacer tooltip" id="badges" original-title="in development">badges</span>' . "\n\r";
-                    }
                     $output .= '<span class="nav-item entypo-logout icon-spacer" id="logout">logout</span>' . "\n\r";
                     $output .= '<span class="nav-item" id="user" data-url="http://koding.com/' . $user . '">' . asg_user_greeting() . $user . ' !</span>' . "\n\r";
                     $output .= asg_get_avatar(asg_user_info('email'),20,true) . "\n\r";
