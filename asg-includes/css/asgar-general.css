@@ -52,8 +52,7 @@ header .avatar {
     height: 20px;
     width: 20px;
 }
-.nav-item,
-.admin-item { 
+.nav-item { 
     cursor: pointer; 
     font-size: 0.9em;
     font-family: 'Roboto', sans-serif;
@@ -71,11 +70,8 @@ header .avatar {
     position: relative;
 }
 .nav-item:hover, 
-.nav-item:focus,
-.admin-item:hover, 
-.admin-item:focus { color: #00A256; }
-.nav-item ul.nav-item-submenu,
-.admin-item ul.admin-item-submenu {
+.nav-item:focus { color: #00A256; }
+.nav-item ul.nav-item-submenu {
     position: absolute;
     top: 23px;
     left: -6px;
@@ -106,28 +102,22 @@ header .avatar {
     z-index: 10;
 }
 .nav-item:hover ul.nav-item-submenu,
-.nav-item:focus ul.nav-item-submenu,
-.admin-item:hover ul.admin-item-submenu,
-.admin-item:focus ul.admin-item-submenu {
+.nav-item:focus ul.nav-item-submenu {
     zoom: 1; 
     opacity: 1; 
     filter: alpha(opacity=100);
     visibility: visible;
     color: #fff;
 }
-.nav-item ul.nav-item-submenu .nav-item-subitem,
-.admin-item ul.admin-item-submenu .admin-item-subitem {
+.nav-item ul.nav-item-submenu .nav-item-subitem {
     padding: 5px 0;
 }
 .nav-item .nav-item-icon,
-.admin-item .admin-item-icon,
-.nav-item ul.nav-item-submenu .nav-item-subitem .nav-subitem-icon,
-.admin-item ul.admin-item-submenu .admin-item-subitem .admin-subitem-icon {
+.nav-item ul.nav-item-submenu .nav-item-subitem .nav-subitem-icon {
     width: 30px;
     display: inline-block;
 }
-.nav-item ul.nav-item-submenu .nav-item-subitem .nav-subitem-text,
-.admin-item ul.admin-item-submenu .admin-item-subitem .admin-subitem-text { 
+.nav-item ul.nav-item-submenu .nav-item-subitem .nav-subitem-text { 
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -135,9 +125,7 @@ header .avatar {
     transition: all 0.5s ease;
 }
 .nav-item ul.nav-item-submenu .nav-item-subitem .nav-subitem-text:focus,
-.nav-item ul.nav-item-submenu .nav-item-subitem .nav-subitem-text:hover,
-.admin-item ul.admin-item-submenu .admin-item-subitem .admin-subitem-text:focus,
-.admin-item ul.admin-item-submenu .admin-item-subitem .admin-subitem-text:hover {
+.nav-item ul.nav-item-submenu .nav-item-subitem .nav-subitem-text:hover {
     color: #00A256;
 }
 .icon-spacer:before {
