@@ -71,7 +71,7 @@
     // Get user details
     function asg_get_user_info($user, $type){
         // Get the user info
-        $get_query = asg_db_query("select " . $type . " from " . TABLE_USERS . " where username = '" . $user . "'");
+        $get_query = asg_db_query("select " . $type . " from " . TABLE_USERS . " where id = '" . $user . "'");
         if(!empty($get_query)) {
             foreach ($get_query as $user) {
                 return $user[$type];

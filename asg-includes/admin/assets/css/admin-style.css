@@ -281,7 +281,6 @@ h1, h2 { margin-top: 0; }
     width: 250px;
 }
 .admin-posts-wrapper {
-    border: 1px solid #eee;
     min-height: 450px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -319,8 +318,7 @@ h1, h2 { margin-top: 0; }
     display: inline-block;
     text-transform: uppercase;
     padding: 10px 15px;
-    border-bottom: 1px solid #ccc;
-    text-align: left;
+    text-align: center;
     font-size: 0.8em;
 }
 .post-action {
