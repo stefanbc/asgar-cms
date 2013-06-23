@@ -135,7 +135,7 @@
                 $output .= '<nav>' . "\n\r"; 
                     // The user is admin and in the admin panel
                     if (asg_user_role() == 1 && (asg_is_page("asg-admin") || isset($_REQUEST['panel']))) {
-                        $output .= '<span class="admin-item" id="admin" data-url="list_posts">
+                        $output .= '<span class="admin-item" id="nav-posts" data-url="list_posts">
                             <span class="admin-item-icon entypo-docs icon-spacer"></span>
                             <span class="admin-item-text">posts</span>
                             <ul class="admin-item-submenu">
@@ -157,10 +157,36 @@
                                 </li>
                             </ul>
                             </span>' . "\n\r";
-                        $output .= '<span class="admin-item entypo-doc-text icon-spacer" id="admin" data-url="list_pages">pages</span>' . "\n\r";
-                        $output .= '<span class="admin-item entypo-users icon-spacer" id="admin" data-url="list_users">users</span>' . "\n\r";
-                        $output .= '<span class="admin-item entypo-palette icon-spacer" id="admin" data-url="apperence">apperence</span>' . "\n\r";
-                        $output .= '<span class="admin-item entypo-tools icon-spacer" id="admin" data-url="settings">settings</span>' . "\n\r";
+                        $output .= '<span class="admin-item" id="nav-pages" data-url="list_pages">
+                            <span class="admin-item-icon entypo-doc-text icon-spacer"></span>
+                            <span class="admin-item-text">pages</span>
+                            <ul class="admin-item-submenu">
+                                <li class="admin-item-subitem" data-url="list_pages">
+                                    <span class="admin-subitem-icon entypo-list icon-spacer"></span>
+                                    <span class="admin-subitem-text">all pages</span>
+                                </li>
+                                <li class="admin-item-subitem" data-url="new_page">
+                                    <span class="admin-subitem-icon entypo-list-add icon-spacer"></span>
+                                    <span class="admin-subitem-text">add new</span>
+                                </li>
+                            </ul>
+                            </span>' . "\n\r";
+                        $output .= '<span class="admin-item" id="nav-users" data-url="list_users">
+                            <span class="admin-item-icon entypo-users icon-spacer"></span>
+                            <span class="admin-item-text">users</span>
+                            <ul class="admin-item-submenu">
+                                <li class="admin-item-subitem" data-url="list_users">
+                                    <span class="admin-subitem-icon entypo-list icon-spacer"></span>
+                                    <span class="admin-subitem-text">all users</span>
+                                </li>
+                                <li class="admin-item-subitem" data-url="new_user">
+                                    <span class="admin-subitem-icon entypo-list-add icon-spacer"></span>
+                                    <span class="admin-subitem-text">add new</span>
+                                </li>
+                            </ul>
+                            </span>' . "\n\r";
+                        $output .= '<span class="admin-item entypo-palette icon-spacer" id="nav-apperence" data-url="apperence">apperence</span>' . "\n\r";
+                        $output .= '<span class="admin-item entypo-tools icon-spacer" id="nav-settings" data-url="settings">settings</span>' . "\n\r";
                     }
                     // The user is admin not on the admin panel
                     if(asg_user_role() == 1 && !asg_is_page("asg-admin") && !isset($_REQUEST['panel'])) {
