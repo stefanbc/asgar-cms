@@ -7,16 +7,16 @@
     
     // Check redirect user if not admin
     function asg_redirect_user(){
-        if(asg_user_info('user_type') == 0) {
+        if(asg_loggedin_user_info('user_type') == 0) {
             header('Location: ' . HTTP);
         }
     }
     
     // Get user role level
     function asg_user_role(){
-        if(asg_user_info('user_type') == 0) {
+        if(asg_loggedin_user_info('user_type') == 0) {
             return 0;
-        } elseif (asg_user_info('user_type') == 1){
+        } elseif (asg_loggedin_user_info('user_type') == 1){
             return 1;
         }
     }
@@ -195,7 +195,7 @@
                     $output .= '<span class="nav-item entypo-user icon-spacer" id="account">account</span>' . "\n\r";
                     $output .= '<span class="nav-item entypo-logout icon-spacer" id="logout">logout</span>' . "\n\r";
                     $output .= '<span class="nav-item" id="user" data-url="http://koding.com/' . $user . '">' . asg_user_greeting() . $user . ' !</span>' . "\n\r";
-                    $output .= asg_get_avatar(asg_user_info('email'),20,true) . "\n\r";
+                    $output .= asg_get_avatar(asg_loggedin_user_info('email'),20,true) . "\n\r";
                 $output .= '</nav>' . "\n\r";
                 $output .= '</section>' . "\n\r";
             $output .= '</header>' . "\n\r";

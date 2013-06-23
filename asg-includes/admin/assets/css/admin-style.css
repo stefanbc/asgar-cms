@@ -280,6 +280,62 @@ h1, h2 { margin-top: 0; }
 .settings_value {
     width: 250px;
 }
+.admin-posts-wrapper {
+    border: 1px solid #eee;
+    min-height: 450px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+}
+.admin-posts-header-wrapper {
+
+}
+.admin-posts-header-wrapper-inner{
+
+}
+.admin-posts-header-col {
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    background: #eee;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    font-size: 0.8em;
+}
+.posts-col1 { width: 2%; }
+.posts-col2 { width: 45%; }
+.posts-col3 { width: 10%; }
+.posts-col4 { width: 12.8%; }
+.posts-col5 { width: 12.9%; }
+.admin-posts-content-wrapper {
+
+}
+.admin-post-wrapper {
+
+}
+.admin-posts-content-col {
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+    font-size: 0.8em;
+}
+.post-action {
+    width: 31.6%;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
 .pagination { 
     overflow:hidden; 
     padding: 0; 

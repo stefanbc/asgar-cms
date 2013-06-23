@@ -57,10 +57,21 @@
     }
     
     // Get loggedin user details
-    function asg_user_info($type){
+    function asg_loggedin_user_info($type){
         $username = $_SESSION['username'];
         // Get the user info
         $get_query = asg_db_query("select " . $type . " from " . TABLE_USERS . " where username = '" . $username . "'");
+        if(!empty($get_query)) {
+            foreach ($get_query as $user) {
+                return $user[$type];
+            }
+        }
+    }
+
+    // Get user details
+    function asg_get_user_info($user, $type){
+        // Get the user info
+        $get_query = asg_db_query("select " . $type . " from " . TABLE_USERS . " where username = '" . $user . "'");
         if(!empty($get_query)) {
             foreach ($get_query as $user) {
                 return $user[$type];

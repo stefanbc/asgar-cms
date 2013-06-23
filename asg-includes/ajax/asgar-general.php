@@ -178,15 +178,15 @@
                     
             echo '<div class="box_inner"><h2 id="info">Account details</h2>You can change your account details here!';
                 echo '<form id="account_form" name="account_form">';
-                    echo '<div class="spacer2">Email<input type="text" class="input" name="account-email" value="' . asg_user_info('email') . '" id="account-email" placeholder="Change your email"></div>';
-                    echo '<div class="spacer2">Twitter<input type="text" class="input" name="account-twitter" value="' . asg_user_info('twitter_handler') . '" id="account-twitter" placeholder="Change your Twitter handler"></div>';
+                    echo '<div class="spacer2">Email<input type="text" class="input" name="account-email" value="' . asg_loggedin_user_info('email') . '" id="account-email" placeholder="Change your email"></div>';
+                    echo '<div class="spacer2">Twitter<input type="text" class="input" name="account-twitter" value="' . asg_loggedin_user_info('twitter_handler') . '" id="account-twitter" placeholder="Change your Twitter handler"></div>';
                     echo '<div class="spacer2">Password<input type="password" class="input" name="account-password" id="account-password" placeholder="Change your password"></div>';
                     
-                    $notification = asg_user_info('notification');
+                    $notification = asg_loggedin_user_info('notification');
                     $checked = ($notification == 1) ? "checked" : "";
                     
                     echo '<div class="spacer2"><input type="checkbox" name="account-notification" value="' . $notification . '" id="account-notification" ' . $checked . '> Invite Request Email Notification</div>';
-                    echo '<div class="spacer2 button_center">Current Session: ' . asg_user_info('last_login') . '</div>';
+                    echo '<div class="spacer2 button_center">Current Session: ' . asg_loggedin_user_info('last_login') . '</div>';
                     echo '<div class="spacer2 button_center">';
                         echo '<button class="button important tooltip" id="delete" type="submit" original-title="This action is irreversible!">DELETE ACCOUNT</button>';
                         echo '<i class="small">This will delete your Community Platform account!</i>';

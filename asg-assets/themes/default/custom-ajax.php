@@ -206,7 +206,7 @@
                 
                     echo '<li id="request_'. $item['id'] .'">';
                     
-                    if(asg_user_info('user_type') == 1) {
+                    if(asg_loggedin_user_info('user_type') == 1) {
                         echo '<span class="clean tooltip" data-id="' . $item['id'] . '" original-title="Delete request!"></span>';
                     }
                     
@@ -282,7 +282,7 @@
         
         case 'stats':
             
-            $invites_number = asg_db_num_rows("select * from " . TABLE_INVITES . " where status = '1' and invited_by = '" . asg_user_info('username') . "'");
+            $invites_number = asg_db_num_rows("select * from " . TABLE_INVITES . " where status = '1' and invited_by = '" . asg_loggedin_user_info('username') . "'");
                 
             echo '<div class="box_inner"><h2>Stats</h2>You can see your rank and the badges you earned here!<br>';
                 echo '<div class="spacer2">Number of people invited: ' . $invites_number . '</div>';
