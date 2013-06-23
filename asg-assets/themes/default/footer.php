@@ -14,6 +14,8 @@ require(['<?=INCLUDES.JS?>require-config'], function() {
     require(['jQuery','log','modal','tipsy','functions','general'], function () {
     	$.getScript("<?=asg_themefolder('js',false)?>jquery.sharrre-1.3.4.min.js");
     	$.getScript("<?=asg_themefolder('js',false)?>jquery.zclip.min.js");
+    	$.getScript("<?=asg_themefolder('js',false)?>waypoints.min.js");
+    	$.getScript("<?=asg_themefolder('js',false)?>waypoints-sticky.js");
     	$.getScript("<?=asg_themefolder('',false)?>custom.js");
     });
 });
