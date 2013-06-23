@@ -203,6 +203,7 @@
         return $output;
     }
 
+    // The sidebar meta box
     function asg_sidebar_meta($user){
         if (!isset($user)) {
             $output = '<span class="meta-item" id="login">login / create account</span>';

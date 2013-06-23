@@ -1,8 +1,10 @@
 <?php
-    /*
-    *
-    *
-	*/
+    /**
+     * Front to the Asgar CMS Platform Admin Panel. 
+     * This file is tha base for the admin panl .
+     *
+     * @package Asgar
+     */
     
     $disallow_theme = true;
 
@@ -11,9 +13,6 @@
     
     // Check if user is admin
     asg_redirect_user();
-
-    // Set a custom title for the page
-    $custom_title = "Asgar Admin Panel";
 
     // Header part
     require(INCLUDES . ADMIN_INCLUDES . FILE_ADMIN_HEADER);
