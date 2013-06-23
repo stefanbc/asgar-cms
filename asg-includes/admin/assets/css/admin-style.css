@@ -177,7 +177,7 @@ div button {
 }
 .page-wrapper {
     width: 900px;
-    min-height: 530px;
+    min-height: 480px;
     margin: 40px auto;
     overflow: hidden;
     display: block;
