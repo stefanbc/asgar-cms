@@ -267,7 +267,7 @@
                     
                     echo '<li ' . $style . '>';
                     
-                        echo '<span class="user_rank">' . $user['rank'] . '.</span>' . asg_get_avatar($user['email'],20,true,'style="height:20px;vertical-align: bottom;margin:0 5px;"') .' <a href="http://koding.com/' . $user['username'] . '" target="_blank" title="' . $user['username'] . '">' . $user['username'] . '</a> invited ' . $user['invites_number'] . ' people! <span class="leaderboard_title">' . asg_user_title($user['invites_number']) . '</span>';
+                        echo '<span class="user_rank">' . $user['rank'] . '.</span>' . asg_get_avatar($user['email'],20,true,'style="height:20px;vertical-align: bottom;margin:0 5px;"') .' <a href="http://koding.com/' . $user['username'] . '" target="_blank" title="' . $user['username'] . '">' . $user['username'] . '</a> invited ' . $user['invites_number'] . ' people! <span class="leaderboard_title right">' . asg_user_title($user['invites_number']) . '</span>';
                         
                     echo '</li>';
                 }
