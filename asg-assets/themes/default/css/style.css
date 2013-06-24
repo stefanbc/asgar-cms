@@ -474,6 +474,14 @@ footer {
         padding: 5px;
         text-align: center;
     }
+    ul.main-navigation li a, 
+    aside.sidebar-wrapper .meta-wrapper .meta-item {
+        font-size: 1em;
+        font-weight: bold;
+    }
+    ul.main-navigation li a.active:after {
+        margin-top: 5px;
+    }
     .content-wrapper {
         float: none;
         width: 280px;
@@ -481,9 +489,6 @@ footer {
     }
     footer {
         width: 250px;
-    }
-    .tbox {
-        left: -10px !important;
     }
     .tinner {
         width: 250px !important;
