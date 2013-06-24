@@ -68,10 +68,6 @@ function delete_request(id) {
     });
 }
 
-$('aside.sidebar-wrapper').waypoint('sticky', {
-    alert('Top of thing hit top of viewport.');
-});
-
 // Request an Invite
 $("#request_invite_form").submit(function() {
     $.post(FILE, {

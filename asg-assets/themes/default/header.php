@@ -25,6 +25,7 @@
 <?=asg_scripts('header')?>
 <link href="<?=asg_themefolder('css',false)?>sharrre.css" rel="stylesheet" type="text/css">
 <link href="<?=asg_themefolder('css',false)?>style.css" rel="stylesheet" type="text/css">
+<link href="<?=asg_themefolder('css',false)?>media-queries.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
