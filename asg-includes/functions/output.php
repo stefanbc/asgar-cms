@@ -185,15 +185,30 @@
                                 </li>
                             </ul>
                             </span>' . "\n\r";
-                        $output .= '<span class="admin-item entypo-palette icon-spacer" id="nav-apperence" data-url="apperence">apperence</span>' . "\n\r";
-                        $output .= '<span class="admin-item entypo-tools icon-spacer" id="nav-settings" data-url="settings">settings</span>' . "\n\r";
+                        $output .= '<span class="admin-item" id="nav-apperence" data-url="apperence">
+                                <span class="admin-item-icon entypo-palette icon-spacer"></span>
+                                <span class="admin-item-text">apperence</span>
+                            </span>' . "\n\r";
+                        $output .= '<span class="admin-item" id="nav-settings" data-url="settings">
+                                <span class="admin-item-icon entypo-tools icon-spacer"></span>
+                                <span class="admin-item-text">settings</span>
+                        </span>' . "\n\r";
                     }
                     // The user is admin not on the admin panel
                     if(asg_user_role() == 1 && !asg_is_page("asg-admin") && !isset($_REQUEST['panel'])) {
-                        $output .= '<span class="nav-item entypo-cog icon-spacer" id="admin" data-url="admin">admin panel</span>' . "\n\r";
+                        $output .= '<span class="nav-item" id="admin" data-url="admin">
+                                <span class="nav-item-icon entypo-cog icon-spacer"></span>
+                                <span class="nav-item-text">admin panel</span>
+                        </span>' . "\n\r";
                     }
-                    $output .= '<span class="nav-item entypo-user icon-spacer" id="account">account</span>' . "\n\r";
-                    $output .= '<span class="nav-item entypo-logout icon-spacer" id="logout">logout</span>' . "\n\r";
+                    $output .= '<span class="nav-item" id="account">
+                        <span class="nav-item-icon entypo-user icon-spacer"></span>
+                        <span class="nav-item-text">account</span>
+                    </span>' . "\n\r";
+                    $output .= '<span class="nav-item" id="logout">
+                        <span class="nav-item-icon entypo-logout icon-spacer"></span>
+                        <span class="nav-item-text">logout</span>
+                    </span>' . "\n\r";
                     $output .= '<span class="nav-item" id="user" data-url="http://koding.com/' . $user . '">' . asg_user_greeting() . $user . ' !</span>' . "\n\r";
                     $output .= asg_get_avatar(asg_loggedin_user_info('email'),20,true) . "\n\r";
                 $output .= '</nav>' . "\n\r";

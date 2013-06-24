@@ -26,6 +26,7 @@ function get_email(id) {
         width: WIDTH,
         height: 120,
         opacity: 60,
+        fixed: false,
         topsplit: 3
     });
 }
@@ -106,6 +107,7 @@ $("#request_invite_form").submit(function() {
                         }
                     });
                 },
+                fixed: false,
                 topsplit: 4
             });
             $('#email').val('').css({
@@ -249,6 +251,7 @@ $('#stats').click(function() {
         width: WIDTH,
         height: 200,
         opacity: 60,
+        fixed: false,
         topsplit: 4
     });
 });

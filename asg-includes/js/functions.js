@@ -42,6 +42,7 @@
 			width: WIDTH,
 			height: height,
 			opacity: 60,
+			fixed: false,
 			topsplit: 4
 		});
 	}

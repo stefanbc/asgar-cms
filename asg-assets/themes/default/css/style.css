@@ -449,6 +449,10 @@ footer {
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+    input.input {
+        color: #000;
+        font-weight: bold;
+    }
     .page-wrapper {
         width: 300px;
         margin: 10px auto;

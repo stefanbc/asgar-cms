@@ -206,3 +206,48 @@ header .avatar {
 .clean { top: 5px; right: 5px; }
 .box_inner { text-align: justify; font-size: 0.9em; }
 .box_inner h2 { margin: 5px 0; }
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    header {
+        height: 40px;
+    }
+    header section {
+        float: none;
+        text-align: center;
+    }
+    .logo {
+        display: none;
+    }
+    nav {
+        text-align: center;
+    }
+    .nav-item, .admin-item {
+        width: 25%;
+        display: inline-block;
+    }
+    .nav-item-text, .admin-item-text {
+        display: none;
+    }
+    .nav-item-icon, .admin-item-icon {
+        font-size: 1.5em;
+        width: 40px;
+        text-align: center;
+    }
+    #user {
+        display: none;
+    }
+    header .avatar {
+        display: none;
+    }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) { 
+
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 940px) { 
+
+}

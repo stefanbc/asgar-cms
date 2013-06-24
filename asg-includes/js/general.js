@@ -73,6 +73,7 @@ $('#account').click(function() {
                 return false;
             });
         },
+        fixed: false,
         topsplit: 4
     });
 });
@@ -136,6 +137,7 @@ $('#login').click(function() {
                             return false;
                         });
                     },
+                    fixed: false,
                     topsplit: 4
                 });
             });
