@@ -6,7 +6,7 @@
 
 <base href="<?=HTTP . '/'?>">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta charset='utf-8'> 
 
 <meta itemprop="name" content="<?=WEBSITE_NAME?>">
@@ -25,7 +25,6 @@
 <?=asg_scripts('header')?>
 <link href="<?=asg_themefolder('css',false)?>sharrre.css" rel="stylesheet" type="text/css">
 <link href="<?=asg_themefolder('css',false)?>style.css" rel="stylesheet" type="text/css">
-<link href="<?=asg_themefolder('css',false)?>media-queries.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>

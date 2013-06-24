@@ -446,3 +446,56 @@ footer {
     width: 100%;
     color: #000;
 }
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    .page-wrapper {
+        width: 300px;
+        margin: 10px auto;
+    }
+    aside.sidebar-wrapper { 
+        float: none;
+        margin: 0 auto 10px auto;
+        border: none;
+        padding: 0;
+        width: 280px;
+    }
+    aside.sidebar-wrapper h2 {
+        text-align: left;
+    }
+    ul.main-navigation {
+        padding: 0;
+        overflow: hidden;
+    }
+    ul.main-navigation li,
+    aside.sidebar-wrapper .meta-wrapper .meta-item {
+        width: 45%;
+        float: left;
+        padding: 5px;
+        text-align: center;
+    }
+    .content-wrapper {
+        float: none;
+        width: 280px;
+        margin: 0 auto;
+    }
+    footer {
+        width: 250px;
+    }
+    .tbox {
+        left: -10px !important;
+    }
+    .tinner {
+        width: 250px !important;
+    }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) { 
+
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 940px) { 
+
+}
