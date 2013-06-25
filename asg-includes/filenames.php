@@ -45,6 +45,10 @@
     define('FILE_ADMIN_ACTION_NEW_POST', 'new_post.php');
     define('FILE_ADMIN_ACTION_NEW_USER', 'new_user.php');
     
+    // Admin includes edit elements
+    define('FILE_ADMIN_ACTION_EDIT_PAGE', 'edit_page.php');
+    define('FILE_ADMIN_ACTION_EDIT_POST', 'edit_post.php');
+    
     // Admin includes apperence
     define('FILE_ADMIN_ACTION_APPERENCE','apperence.php');
     

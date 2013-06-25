@@ -26,6 +26,9 @@
         case 'new_post':
             include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_NEW_POST);
         break;
+        case 'edit_post':
+            include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_EDIT_POST);
+        break;
         case 'categories':
             include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_CATEGORIES);
         break;
@@ -37,6 +40,9 @@
         break;
         case 'new_page':
             include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_NEW_PAGE);
+        break;
+        case 'edit_page':
+            include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_EDIT_PAGE);
         break;
         case 'list_users':
             include(INCLUDES . ADMIN_ACTIONS . FILE_ADMIN_ACTION_LIST_USERS);
