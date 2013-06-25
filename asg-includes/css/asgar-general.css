@@ -205,12 +205,6 @@ header .avatar {
 .clean { top: 5px; right: 5px; }
 .box_inner { text-align: justify; font-size: 0.9em; }
 .box_inner h2 { margin: 5px 0; }
-.blur {
-    -ms-filter: blur(3px);
-    -webkit-filter: blur(3px);
-    -moz-filter: blur(3px);
-    -o-filter: blur(3px);
-}
 
 /* Landscape phones and down */
 @media (max-width: 480px) {

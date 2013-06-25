@@ -29,7 +29,7 @@
 					    $output_post .= '<div class="admin-posts-content-col col-date posts-col4">' . $post['post_date'] . '</div>';
 					    $output_post .= '<div class="admin-posts-content-col col-actions posts-col5">
 					    	<span id="post-edit" class="post-action entypo-pencil icon_spacer tooltip anchor" original-title="edit" data-url="asg-admin?panel=edit_post&post_id=' . $post['ID'] . '"></span>
-					    	<span id="post-view" class="post-action entypo-eye icon_spacer tooltip anchor" original-title="view" data-url="' . HTTP . '/blog/' . str_replace(" ","_", $post['post_title']) . '"></span>
+					    	<span id="post-view" class="post-action entypo-eye icon_spacer tooltip anchor" original-title="view" data-url="' . HTTP . '/blog/' . str_replace(" ","_", strtolower($post['post_title'])) . '"></span>
 					    	<span id="post-delete" class="post-action entypo-trash icon_spacer tooltip" original-title="delete"></span>
 					    </div>';
 				    $output_post .= '</div>';
