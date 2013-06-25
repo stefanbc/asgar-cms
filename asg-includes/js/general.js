@@ -72,6 +72,12 @@ $('#account').click(function() {
                 // Not to post the form physically
                 return false;
             });
+            $('.page-wrapper').addClass('blur');
+            $('header').addClass('blur');
+        },
+        closejs: function() {
+            $('.page-wrapper').removeClass('blur');
+            $('header').removeClass('blur');
         },
         fixed: false,
         topsplit: 4
@@ -137,10 +143,20 @@ $('#login').click(function() {
                             return false;
                         });
                     },
+                    closejs: function() {
+                        $('.page-wrapper').removeClass('blur');
+                        $('header').removeClass('blur');
+                    },
                     fixed: false,
                     topsplit: 4
                 });
             });
+            $('.page-wrapper').addClass('blur');
+            $('header').addClass('blur');
+        },
+        closejs: function() {
+            $('.page-wrapper').removeClass('blur');
+            $('header').removeClass('blur');
         },
         fixed: false,
         topsplit: 4
