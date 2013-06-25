@@ -54,13 +54,12 @@ header .avatar {
 }
 .nav-item { 
     cursor: pointer; 
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: #fff;
     text-shadow: #000 1px 2px 2px;
     margin: 0 5px;
-    padding: 0 5px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -131,7 +130,7 @@ header .avatar {
 .icon-spacer:before {
     padding: 5px;
     color: #fff;
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 .search-wrapper { 
     position: relative; 

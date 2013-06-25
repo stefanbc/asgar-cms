@@ -516,7 +516,7 @@ footer {
 }
 
 /* Landscape phone to portrait tablet */
-@media (max-width: 768px) { 
+@media (min-width: 480px) and (max-width: 768px) { 
     input.input {
         color: #000;
         font-weight: bold;
