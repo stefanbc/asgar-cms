@@ -5,4 +5,8 @@ CMS Platform
 
 Development status: In progress
 
-[Demo](http://stefanbc.koding.com/asgar) - User: demo Pass: d3m0 (User is not admin)
+[Demo](http://stefanbc.kd.io/asgar) - 
+
+User: demo (user doesn't have admin rights)
+
+Pass: d3m0
