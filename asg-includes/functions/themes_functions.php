@@ -67,7 +67,13 @@
                 foreach($page_query as $custom_link){
                     // Request the page name.
                     if($custom_link['custom_link'] != NULL) {
-                        $file = $custom_link['custom_link'] . '.php';
+                        // Check if the theme file exists
+                        $check_file = THEMES . ACTIVE_THEME . '/' . $custom_link['custom_link'] . '.php';
+                        if(file_exists($check_file)) {
+                            $file  = $custom_link['custom_link'] . '.php';
+                        } else {
+                            $file = "index.php";
+                        }
                     } else {
                         $file = "index.php";
                     }
