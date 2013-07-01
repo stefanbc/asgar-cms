@@ -7,7 +7,7 @@
     
     // Check redirect user if not admin
     function asg_redirect_user(){
-        if(asg_loggedin_user_info('user_type') == 0) {
+        if(asg_loggedin_user_info('user_type') != 1) {
             header('Location: ' . HTTP);
         }
     }
@@ -209,8 +209,12 @@
                         <span class="nav-item-icon entypo-logout icon-spacer"></span>
                         <span class="nav-item-text">logout</span>
                     </span>' . "\n\r";
-                    $output .= '<span class="nav-item" id="user" data-url="http://koding.com/' . $user . '">' . asg_user_greeting() . $user . ' !</span>' . "\n\r";
-                    $output .= asg_get_avatar(asg_loggedin_user_info('email'),20,true) . "\n\r";
+                    if (asg_user_role() == 1 && (asg_is_page("asg-admin") || isset($_REQUEST['panel']))) {
+                        $output .= asg_get_avatar(asg_loggedin_user_info('email'), 20, true) . "\n\r";
+                    } else {
+                        $output .= '<span class="nav-item" id="user" data-url="http://koding.com/' . $user . '">' . asg_user_greeting() . $user . ' !</span>' . "\n\r";
+                        $output .= asg_get_avatar(asg_loggedin_user_info('email'), 20, true) . "\n\r";
+                    }
                 $output .= '</nav>' . "\n\r";
                 $output .= '</section>' . "\n\r";
             $output .= '</header>' . "\n\r";
