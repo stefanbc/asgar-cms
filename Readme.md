@@ -1,4 +1,6 @@
-Asgar [![Clone in Koding](http://kbutton.org/clone.png?v1378807060)](http://kbutton.org/stefanbc/Asgar)
+## NO LONGER MAINTAINED
+
+Asgar CMS
 =====
 
 CMS Platform
